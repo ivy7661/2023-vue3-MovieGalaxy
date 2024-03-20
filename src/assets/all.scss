@@ -1,0 +1,38 @@
+@import 'bootstrap/scss/functions';
+@import './helpers/_variables'; // 自定義
+@import './helpers/colors';
+@import './helpers/mixin';
+
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/bootstrap';
+
+@import './helpers/base';
+
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'vue-loading-overlay/dist/css/index.css';
+
+// body {
+//   background: $primary-c;
+// }
+#app {
+  background: $primary-c;
+}
+
+header {
+  nav {
+    a {
+      font-weight: bold;
+      color: #b43b3b;
+
+      &.router-link-exact-active {
+        color: #752525;
+      }
+    }
+  }
+}
+
+.single-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
