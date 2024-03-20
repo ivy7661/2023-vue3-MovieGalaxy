@@ -16,19 +16,7 @@
 // }
 #app {
   background: $primary-c;
-}
-
-header {
-  nav {
-    a {
-      font-weight: bold;
-      color: #b43b3b;
-
-      &.router-link-exact-active {
-        color: #752525;
-      }
-    }
-  }
+  letter-spacing: 1.6px;
 }
 
 .single-ellipsis {

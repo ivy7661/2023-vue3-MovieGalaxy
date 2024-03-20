@@ -1,5 +1,45 @@
 @mixin mobile {
-  @media (max-width: 450px) {
+  @media (max-width: 576px) {
     @content;
   }
+}
+@mixin lg {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Fonts
+@mixin NotoSans {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  line-height: normal;
+}
+@mixin Poppins {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  line-height: normal;
+}
+@mixin Inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  line-height: normal;
+}
+// border
+@mixin border-1 {
+  border-radius: 20px;
+  border: 2px solid #b88ed3;
+}
+@mixin btn-border-1 {
+  border-radius: 10px;
+  border: 2px solid #f8d8f5;
+}
+@mixin btn-border-2 {
+  border-radius: 10px;
+  border: 2px solid #b37dd4;
+  background: linear-gradient(271deg, #6a477f 11.6%, #30536d 94.29%);
 }

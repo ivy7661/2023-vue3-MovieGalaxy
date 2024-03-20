@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar sticky-top navbar-expand-lg bg-light-green py-1">
-    <div class="container">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg bg-light-green py-1">
       <RouterLink to="/">
         <img
           src="/images/movie_picture/LOGO.png"
@@ -30,17 +30,17 @@
       <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarText">
         <ul class="navbar-nav mt-2 mt-lg-0">
           <li class="nav-item mb-2 mb-lg-0">
-            <RouterLink to="/aboutUs" class="nav-link pt-3 mx-2 text-white fs-6 d-inline-block"
+            <RouterLink to="" class="nav-link pt-3 mx-2 text-white fs-6 d-inline-block"
               >關於影評星塵</RouterLink
             >
           </li>
           <li class="nav-item mb-2 mb-lg-0">
-            <RouterLink to="/movies" class="nav-link d-inline-block text-white fs-6 pt-3 mx-2"
+            <RouterLink to="" class="nav-link d-inline-block text-white fs-6 pt-3 mx-2"
               >找電影</RouterLink
             >
           </li>
           <li class="nav-item mb-2 mb-lg-0">
-            <RouterLink to="/movies" class="nav-link d-inline-block text-white fs-6 pt-3 mx-2"
+            <RouterLink to="" class="nav-link d-inline-block text-white fs-6 pt-3 mx-2"
               >註冊/登入</RouterLink
             >
           </li>
@@ -52,8 +52,8 @@
           <i class="bi bi-person-fill fs-4 ms-4 me-2 text-white"></i>
         </RouterLink>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -67,7 +67,10 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   z-index: 1021;
+
+  // background: #3e404b;
 }
+
 .mainView {
   min-height: calc(100vh - 311px);
 }
@@ -77,17 +80,5 @@ export default {
   @include mobile() {
     width: 85px;
   }
-}
-.nav-item .nav-link {
-  font-weight: 400;
-  border-bottom: 4px solid transparent;
-}
-.nav-item .nav-link:focus {
-  color: #698f39;
-  border-bottom: 4px solid #698f39;
-}
-.nav-item .router-link-exact-active {
-  color: #698f39;
-  border-bottom: 4px solid #698f39;
 }
 </style>

@@ -1,32 +1,24 @@
 <template>
   <div class="container">
-    <BannerSwiper></BannerSwiper>
+    <BannerSwiper class="d-none d-md-block"></BannerSwiper>
+    <!-- d-md-none -->
+    <BannerMobile></BannerMobile>
   </div>
 </template>
 
 <script>
 import BannerSwiper from '@/components/front/index/BannerSwiper.vue';
-import axios from 'axios';
-const { VITE_API_URL } = import.meta.env;
+import BannerMobile from '@/components/front/index/BannerMobile.vue';
 
 export default {
   data() {
-    return {
-      movies: []
-    };
+    return {};
   },
   components: {
-    BannerSwiper
+    BannerSwiper,
+    BannerMobile
   },
-  mounted() {
-    this.getMovies();
-  },
-  methods: {
-    getMovies() {
-      axios.get(`${VITE_API_URL}/movieDatas`).then((res) => {
-        console.log(res);
-      });
-    }
-  }
+  mounted() {},
+  methods: {}
 };
 </script>
