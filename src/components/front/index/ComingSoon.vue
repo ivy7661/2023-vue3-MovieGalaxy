@@ -3,8 +3,8 @@
     <div class="bg-title d-flex justify-content-center mx-1 mb-5">
       <div class="wrap-title position-relative">
         <div class="bg-yellow d-none d-lg-block"></div>
-        <h2 class="main-title fs-1">TOP 10 Popular movies this week</h2>
-        <h3 class="subtitle fs-6 fw-normal">本週熱門電影 TOP 10</h3>
+        <h2 class="main-title fs-1">Coming Soon to theaters</h2>
+        <h3 class="subtitle fs-6 fw-normal">即將上映</h3>
       </div>
     </div>
     <swiper
@@ -45,8 +45,8 @@
         </swiper-slide>
       </template>
     </swiper>
-    <div class="swiper-button-prev sw1"></div>
-    <div class="swiper-button-next sw1"></div>
+    <div class="swiper-button-prev sw2"></div>
+    <div class="swiper-button-next sw2"></div>
   </div>
 </template>
 
@@ -64,8 +64,8 @@ export default {
     return {
       modules: [Navigation, Autoplay],
       navigation: {
-        nextEl: '.swiper-button-next.sw1',
-        prevEl: '.swiper-button-prev.sw1'
+        nextEl: '.swiper-button-next.sw2',
+        prevEl: '.swiper-button-prev.sw2'
       },
       swiperOptions: {
         breakpoints: {
@@ -112,7 +112,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/helpers/colors';
 
-.swiper-button-prev.sw1 {
+.swiper-button-prev.sw2 {
   background: url(/icons/leftArrow.png) center center no-repeat;
   background-size: 42px 60px;
   top: 450px;
@@ -121,7 +121,7 @@ export default {
   height: 60px;
   color: transparent;
 }
-.swiper-button-next.sw1 {
+.swiper-button-next.sw2 {
   background: url(/icons/rightArrow.png) center center no-repeat;
   background-size: 42px 60px;
   top: 450px;

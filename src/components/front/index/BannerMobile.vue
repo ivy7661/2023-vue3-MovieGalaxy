@@ -8,8 +8,8 @@
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
     >
       <template v-for="movie in movies" :key="movie.id">
-        <swiper-slide class="">
-          <div>
+        <swiper-slide>
+          <div class="d-flex justify-content-center">
             <RouterLink :to="`/movies/${movie.id}`">
               <img :src="movie.imgsUrl[0]" :alt="movie.title" class="d-block rounded-3 pic" />
             </RouterLink>
@@ -65,7 +65,7 @@ export default {
             spaceBetween: 40
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 30
           },
           576: {

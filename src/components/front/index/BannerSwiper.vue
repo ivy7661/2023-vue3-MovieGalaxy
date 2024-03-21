@@ -1,5 +1,5 @@
 <template>
-  <div class="position-relative mb-lg-5">
+  <div class="position-relative mb-lg-10">
     <swiper
       :modules="modules"
       :navigation="navigation"
@@ -9,7 +9,7 @@
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
       class="rounded-3 position-relative"
     >
-      <div class="bg-green rounded-3"></div>
+      <div class="bg-green rounded-3 d-none d-lg-block"></div>
       <div class="bg-pink"></div>
       <template v-for="movie in movies" :key="movie.id">
         <!-- v-if="movie.is_hot === 1" -->
@@ -197,8 +197,8 @@ export default {
 }
 
 .bg-green {
-  max-width: 351px;
-  max-height: 351px;
+  width: 351px;
+  height: 351px;
   position: absolute;
   left: 39px;
   top: -33px;
@@ -206,8 +206,8 @@ export default {
   filter: blur(171.5px);
 }
 .bg-pink {
-  max-width: 172px;
-  max-height: 172px;
+  width: 172px;
+  height: 172px;
   position: absolute;
   right: 9px;
   top: -71px;

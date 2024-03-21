@@ -3,7 +3,7 @@ import jsonServer from 'json-server';
 import auth from 'json-server-auth';
 
 const app = jsonServer.create();
-const router = jsonServer.router('./public/db.json');
+const router = jsonServer.router('db.json');
 
 // /!\ Bind the router db to the app
 app.db = router.db;
