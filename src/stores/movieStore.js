@@ -11,7 +11,6 @@ export default defineStore('movieStore', {
       axios
         .get(`${VITE_API_URL}/movieDatas`)
         .then((res) => {
-          console.log(res);
           this.movies = res.data;
           console.log(this.movies);
         })

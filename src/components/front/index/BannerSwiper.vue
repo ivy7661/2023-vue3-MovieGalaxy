@@ -1,5 +1,5 @@
 <template>
-  <div class="position-relative mb-5">
+  <div class="position-relative mb-lg-5">
     <swiper
       :modules="modules"
       :navigation="navigation"
@@ -15,11 +15,11 @@
         <!-- v-if="movie.is_hot === 1" -->
         <swiper-slide>
           <div class="d-flex">
-            <img src="/images/movie_picture/Open03.jpg" class="carousel-img" alt="oppen03" />
+            <img :src="movie.imgsUrl[0]" class="carousel-img" alt="oppen03" />
             <div class="car-caption">
               <div class="wrap-carousel-title">
                 <h3 class="carousel-title">{{ movie.movieName }}</h3>
-                <h3 class="carousel-title">Oppenheimer</h3>
+                <h3 class="carousel-title">{{ movie.movieEnglishName }}</h3>
               </div>
               <p class="carousel-content fs-6">
                 {{ movie.movieIntroduction }}
@@ -33,13 +33,11 @@
                     <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
                   </span>
                 </div>
-                <p class="fs-6 carousel-content2">已獲得本周評論數第一名:955則評論</p>
+                <p class="fs-6 carousel-content2">{{ movie.info }}</p>
                 <button class="btn-carousel">
-                  <a
-                    href="https://jsproject-movie.github.io/project/newPages/4-1moviestnopsis.html?id=1"
-                    class="fs-6 btn-index-a"
-                    >read more <span class="ml-15"></span
-                    ><img src="/icons/PlayButton_purple.png" alt="" />
+                  <a href="#" class="fs-6 btn-index-a"
+                    >read more <span class="me-2"></span
+                    ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
                   </a>
                 </button>
               </div>
@@ -119,7 +117,6 @@ export default {
   color: transparent;
 }
 
-//css 輪播
 .wrap-carousel-title {
   display: flex;
   flex-direction: column;
@@ -200,8 +197,8 @@ export default {
 }
 
 .bg-green {
-  width: 351px;
-  height: 351px;
+  max-width: 351px;
+  max-height: 351px;
   position: absolute;
   left: 39px;
   top: -33px;
@@ -209,8 +206,8 @@ export default {
   filter: blur(171.5px);
 }
 .bg-pink {
-  width: 172px;
-  height: 172px;
+  max-width: 172px;
+  max-height: 172px;
   position: absolute;
   right: 9px;
   top: -71px;

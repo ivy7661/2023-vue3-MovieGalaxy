@@ -12,6 +12,7 @@
       "ratingStars": 5,
       "videoId": "cnc8mDAB7QI",
       "movieIntroduction": "美國科學家 J. 羅伯特·奧本海默的故事以及他在原子彈研發中所扮演的角色。",
+      "info": "2024年劇情類最佳影片",
       "personnelInformation": {
         "director": "克里斯多福諾蘭",
         "writer": "克里斯多福諾蘭凱鳥馬丁·舍溫",
@@ -19,7 +20,7 @@
       },
       "imgUrl": "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/Oppenheimer-1.jpg",
       "imgsUrl": [
-        "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/OppenheimerVideo.png"
+        "https://github.com/ivy7661/2023-vue3-MovieGalaxy/blob/main/public/images/movie_picture/Oppenheimer_1.jpg?raw=true"
       ],
       "stillsPhotos": [
         "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/Oppenheimer-4.jpg",
@@ -69,12 +70,14 @@
       "videoId": "h0xFhp45VLQ",
       "ratingStars": 4,
       "movieIntroduction": "在《復仇者聯盟：終局之戰》事件發生後的新系列中，善變的反派洛基重新扮演惡作劇之神的角色。",
+      "info": "美國超級英雄類型的網路影集",
       "personnelInformation": {
         "director": "凱特·赫倫",
         "writer": "麥可沃爾德倫",
         "actor": "湯姆希德斯頓·歐文威爾森· 索菲亞·迪·馬蒂諾"
       },
       "imgUrl": "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/loki.jpg",
+      "imgsUrl": ["https://news.agentm.tw/wp-content/uploads/loki-tom-hiddleston.jpg"],
       "imgUrl2": "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/lokiMovie.png",
       "stillsPhotos": [
         "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/loki1.jpg",

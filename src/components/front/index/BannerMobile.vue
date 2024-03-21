@@ -1,48 +1,59 @@
 <template>
-  <div class="slider-box">
+  <div class="mb-5">
     <swiper
       :modules="modules"
-      :navigation="navigation"
       :loop="true"
       :speed="800"
       :breakpoints="swiperOptions.breakpoints"
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
     >
       <template v-for="movie in movies" :key="movie.id">
-        <swiper-slide>
-          <div class="position-relative hover-show-btn">
-            <div class="pic">
-              <RouterLink :to="`/movies/${movie.id}`" class="pic">
-                <img :src="movie.imgUrl" :alt="movie.title" class="w-100 d-block rounded-3" />
-              </RouterLink>
+        <swiper-slide class="">
+          <div>
+            <RouterLink :to="`/movies/${movie.id}`">
+              <img :src="movie.imgsUrl[0]" :alt="movie.title" class="d-block rounded-3 pic" />
+            </RouterLink>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="car-caption">
+              <div class="wrap-carousel-title mt-2">
+                <h3 class="carousel-title">{{ movie.movieName }} {{ movie.movieEnglishName }}</h3>
+                <h3 class="carousel-title"></h3>
+              </div>
+              <p class="carousel-content fs-6">
+                {{ movie.movieIntroduction }}
+              </p>
+              <div class="wrap-carousel-content">
+                <div class="wrap-star mb-2">
+                  <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
+                    <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
+                  </span>
+                  <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
+                    <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
+                  </span>
+                </div>
+                <p class="fs-6 carousel-content2">{{ movie.info }}</p>
+              </div>
             </div>
           </div>
-          <RouterLink :to="`/movies/${movie.id}`">
-            <div class="py-3 py-lg-4">
-              <h4 class="fs-5 fs-lg-4 text-dark mb-2 mb-lg-3">{{ movie.movieName }}</h4>
-            </div>
-          </RouterLink>
         </swiper-slide>
       </template>
     </swiper>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
   </div>
 </template>
 
 <script>
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { mapState, mapActions } from 'pinia';
 import 'swiper/scss';
-import 'swiper/scss/navigation';
 import movieStore from '@/stores/movieStore';
 
 export default {
   data() {
     return {
-      cartQty: 1,
-      modules: [Navigation, Autoplay],
+      modules: [Autoplay],
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
@@ -50,19 +61,19 @@ export default {
       swiperOptions: {
         breakpoints: {
           1200: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 40
           },
           768: {
-            slidesPerView: 3,
-            spaceBetween: 30
-          },
-          576: {
             slidesPerView: 2,
             spaceBetween: 30
           },
+          576: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          },
           375: {
-            slidesPerView: 1.6,
+            slidesPerView: 1,
             spaceBetween: 16
           },
           0: {
@@ -90,61 +101,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider-box {
-  position: relative;
+@import '@/assets/helpers/colors';
+
+.wrap-carousel-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.swiper-button-next,
-.swiper-button-prev {
-  @include mobile() {
-    display: none;
-  }
-}
-.swiper-button-prev {
-  background: url(../../../public/icons/previous_arrow.png) center center no-repeat;
-  background-size: 45px 45px;
-  top: 110px;
-  left: -90px;
-  width: 90px;
-  height: 90px;
-  color: transparent;
-}
-.swiper-button-next {
-  background: url(../../../public/icons/next_arrow.png) center center no-repeat;
-  background-size: 45px 45px;
-  top: 110px;
-  right: -90px;
-  width: 90px;
-  height: 90px;
-  color: transparent;
-}
-.swiper-slide img {
-  height: 200px;
-  @include mobile() {
-    height: 200px;
-  }
+.carousel-title {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @include Poppins;
+  line-height: 150%;
+  font-size: 28px;
+  background: $bg-c1;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.add-to-cart-btn {
-  display: none;
+.car-caption {
+  max-width: 600px;
+  // height: 440px;
+  // margin-top: 20px;
+  // margin-left: 35px;
+  background-color: $bg-c1;
 }
-.hover-show-btn:hover {
-  .add-to-cart-btn {
-    display: block;
-    width: 90%;
-  }
+.wrap-carousel-content {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
 }
-
-.pic:before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.4s ease;
+.carousel-content {
+  max-width: 400px;
+  color: #fff;
+  @include NotoSans;
+  text-align: left;
 }
-.pic:hover:before {
-  background-color: rgba(0, 0, 0, 0.3);
+.carousel-content2 {
+  color: #fff;
+  @include NotoSans;
+  text-align: center;
+}
+.wrap-star {
+  @include flex-center;
+}
+.pic {
+  max-width: 500px;
+  height: 300px;
 }
 </style>
