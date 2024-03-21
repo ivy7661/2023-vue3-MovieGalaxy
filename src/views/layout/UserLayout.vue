@@ -1,13 +1,15 @@
 <template>
-  <HeaderComponent />
-  <!-- :userId="getUser?.id" -->
+  <div class="container">
+    <HeaderComponent />
+    <!-- :userId="getUser?.id" -->
 
-  <main class="mainView">
-    <RouterView></RouterView>
-  </main>
-  <!-- <Returntop-Btn></Returntop-Btn> -->
+    <main class="mainView">
+      <RouterView></RouterView>
+    </main>
+    <!-- <Returntop-Btn></Returntop-Btn> -->
 
-  <!-- <FooterComponent /> -->
+    <!-- <FooterComponent /> -->
+  </div>
 </template>
 
 <script>

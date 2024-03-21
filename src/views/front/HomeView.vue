@@ -1,9 +1,7 @@
 <template>
-  <div class="container">
-    <BannerSwiper class="d-none d-md-block"></BannerSwiper>
-    <!-- d-md-none -->
-    <BannerMobile></BannerMobile>
-  </div>
+  <BannerSwiper class="d-none d-md-block"></BannerSwiper>
+  <!-- d-md-none -->
+  <BannerMobile></BannerMobile>
 </template>
 
 <script>

@@ -18,7 +18,9 @@
         "actor": "希里安墨菲艾米莉 · 布朗特 · 馬特達蒙"
       },
       "imgUrl": "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/Oppenheimer-1.jpg",
-      "imgUrl2": "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/OppenheimerVideo.png",
+      "imgsUrl": [
+        "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/OppenheimerVideo.png"
+      ],
       "stillsPhotos": [
         "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/Oppenheimer-4.jpg",
         "https://raw.githubusercontent.com/JSproject-movie/project/main/newPages/movie%20picture/meet.jpg",
