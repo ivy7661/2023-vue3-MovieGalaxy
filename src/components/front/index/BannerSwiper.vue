@@ -1,6 +1,6 @@
 <template>
   <!-- Slider main container -->
-  <div class="mb-lg-10">
+  <div class="mb-lg-10 d-flex justify-content-center">
     <div class="swiper1 rounded-3 position-relative">
       <div class="bg-green d-none d-lg-block"></div>
       <div class="bg-pink"></div>
@@ -107,12 +107,6 @@ export default {
 .swiper1 {
   overflow: hidden;
 }
-// .swiper-button-next,
-// .swiper-button-prev {
-//   @include lg() {
-//     display: none;
-//   }
-// }
 .swiper-button-prev {
   background: url(/icons/leftArrow.png) center center no-repeat;
   background-size: 42px 60px;

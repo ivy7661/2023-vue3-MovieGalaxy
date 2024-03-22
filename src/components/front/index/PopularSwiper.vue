@@ -7,54 +7,54 @@
         <h3 class="subtitle fs-6 fw-normal">本週熱門電影 TOP 10</h3>
       </div>
     </div>
-    <swiper
-      :modules="modules"
-      :navigation="navigation"
-      :loop="true"
-      :speed="800"
-      :breakpoints="swiperOptions.breakpoints"
-      :autoplay="{ delay: 2500, disableOnInteraction: false }"
-      class="px-7"
-    >
-      <template v-for="movie in popularMovies" :key="movie.id">
-        <!-- v-if="movie.is_hot === 1" -->
-        <swiper-slide>
-          <div class="wrap-card">
-            <div class="d-flex justify-content-center">
-              <RouterLink :to="`/movies/${movie.id}`">
-                <img :src="movie.imgUrl" :alt="movie.title" class="w-100 d-block rounded-3 pic" />
-              </RouterLink>
-            </div>
-            <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
-              <div class="d-flex">
-                <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                  <img src="/icons/star1.png" alt="star-full" class="star1" />
-                </span>
-                <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                  <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
-                </span>
+    <!-- swiper -->
+    <div class="swiper2 rounded-3 position-relative px-10">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <template v-for="movie in popularMovies" :key="movie.id">
+          <!-- v-if="movie.is_hot === 1" -->
+          <div class="swiper-slide">
+            <div class="wrap-card">
+              <div class="d-flex justify-content-center">
+                <RouterLink :to="`/movies/${movie.id}`">
+                  <img :src="movie.imgUrl" :alt="movie.title" class="w-100 d-block rounded-3 pic" />
+                </RouterLink>
               </div>
-              <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.movieName }}</h4>
-              <btton class="btn-vedio">
-                <a href="#" class="vedio-link">
-                  <img src="/icons/PlayButton_grey.png" alt="" /><span class="me-2"></span>預告片
-                </a>
-              </btton>
+              <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
+                <div class="d-flex">
+                  <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-lg-1">
+                    <img src="/icons/star1.png" alt="star-full" class="star1" />
+                  </span>
+                  <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-lg-1">
+                    <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
+                  </span>
+                </div>
+                <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.movieName }}</h4>
+                <btton class="btn-vedio">
+                  <a href="#" class="vedio-link">
+                    <img src="/icons/PlayButton_grey.png" alt="" /><span class="me-2"></span>預告片
+                  </a>
+                </btton>
+              </div>
             </div>
           </div>
-        </swiper-slide>
-      </template>
-    </swiper>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+        </template>
+      </div>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev2"></div>
+      <div class="swiper-button-next2"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/scss';
-import 'swiper/scss/navigation';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import { mapState, mapActions } from 'pinia';
 import movieStore from '@/stores/movieStore';
@@ -62,44 +62,47 @@ import movieStore from '@/stores/movieStore';
 export default {
   data() {
     return {
-      popularMovies: [],
-      modules: [Navigation, Autoplay],
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      swiperOptions: {
-        breakpoints: {
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 40
-          },
-          768: {
-            slidesPerView: 2.5,
-            spaceBetween: 30
-          },
-          576: {
-            slidesPerView: 2,
-            spaceBetween: 30
-          },
-          375: {
-            slidesPerView: 1,
-            spaceBetween: 16
-          },
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 16
-          }
-        }
-      }
+      swiper2: [],
+      popularMovies: []
     };
-  },
-  components: {
-    Swiper,
-    SwiperSlide
   },
   mounted() {
     this.getMovies();
+    this.swiper2 = new Swiper('.swiper2', {
+      modules: [Navigation, Autoplay],
+      loop: true,
+      speed: 800,
+      navigation: {
+        nextEl: '.swiper-button-next2',
+        prevEl: '.swiper-button-prev2'
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 40
+        },
+        768: {
+          slidesPerView: 2.5,
+          spaceBetween: 30
+        },
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        375: {
+          slidesPerView: 1,
+          spaceBetween: 16
+        },
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 16
+        }
+      }
+    });
   },
   computed: {
     ...mapState(movieStore, ['movies'])
@@ -117,24 +120,30 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/helpers/colors';
-
-.swiper-button-prev {
+.swiper2 {
+  overflow: hidden;
+}
+.swiper-button-prev2 {
   background: url(/icons/leftArrow.png) center center no-repeat;
   background-size: 42px 60px;
-  top: 450px;
+  top: 230px;
   left: 5px;
   width: 42px;
   height: 60px;
   color: transparent;
+  position: absolute;
+  z-index: 999;
 }
-.swiper-button-next {
+.swiper-button-next2 {
   background: url(/icons/rightArrow.png) center center no-repeat;
   background-size: 42px 60px;
-  top: 450px;
+  top: 230px;
   right: 5px;
   width: 42px;
   height: 60px;
   color: transparent;
+  position: absolute;
+  z-index: 999;
 }
 
 .wrap-carousel-title {
