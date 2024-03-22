@@ -16,7 +16,7 @@
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
       class="px-7"
     >
-      <template v-for="movie in movies" :key="movie.id">
+      <template v-for="movie in popularMovies" :key="movie.id">
         <!-- v-if="movie.is_hot === 1" -->
         <swiper-slide>
           <div class="wrap-card">
@@ -45,8 +45,8 @@
         </swiper-slide>
       </template>
     </swiper>
-    <div class="swiper-button-prev sw1"></div>
-    <div class="swiper-button-next sw1"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </template>
 
@@ -62,10 +62,11 @@ import movieStore from '@/stores/movieStore';
 export default {
   data() {
     return {
+      popularMovies: [],
       modules: [Navigation, Autoplay],
       navigation: {
-        nextEl: '.swiper-button-next.sw1',
-        prevEl: '.swiper-button-prev.sw1'
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       },
       swiperOptions: {
         breakpoints: {
@@ -103,6 +104,11 @@ export default {
   computed: {
     ...mapState(movieStore, ['movies'])
   },
+  watch: {
+    movies() {
+      this.popularMovies = this.movies;
+    }
+  },
   methods: {
     ...mapActions(movieStore, ['getMovies'])
   }
@@ -112,7 +118,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/helpers/colors';
 
-.swiper-button-prev.sw1 {
+.swiper-button-prev {
   background: url(/icons/leftArrow.png) center center no-repeat;
   background-size: 42px 60px;
   top: 450px;
@@ -121,7 +127,7 @@ export default {
   height: 60px;
   color: transparent;
 }
-.swiper-button-next.sw1 {
+.swiper-button-next {
   background: url(/icons/rightArrow.png) center center no-repeat;
   background-size: 42px 60px;
   top: 450px;

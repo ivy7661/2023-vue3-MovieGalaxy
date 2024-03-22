@@ -1,64 +1,63 @@
 <template>
-  <div class="position-relative mb-lg-10">
-    <swiper
-      :modules="modules"
-      :navigation="navigation"
-      :pagination="{ el: '.swiper-pagination', clickable: true }"
-      :loop="true"
-      :speed="800"
-      :autoplay="{ delay: 2500, disableOnInteraction: false }"
-      class="rounded-3 position-relative"
-    >
-      <div class="bg-green rounded-3 d-none d-lg-block"></div>
+  <!-- Slider main container -->
+  <div class="mb-lg-10">
+    <div class="swiper1 rounded-3 position-relative">
+      <div class="bg-green d-none d-lg-block"></div>
       <div class="bg-pink"></div>
-      <template v-for="movie in movies" :key="movie.id">
-        <!-- v-if="movie.is_hot === 1" -->
-        <swiper-slide>
-          <div class="d-flex">
-            <img :src="movie.imgsUrl[0]" class="carousel-img" alt="oppen03" />
-            <div class="car-caption">
-              <div class="wrap-carousel-title">
-                <h3 class="carousel-title">{{ movie.movieName }}</h3>
-                <h3 class="carousel-title">{{ movie.movieEnglishName }}</h3>
-              </div>
-              <p class="carousel-content fs-6">
-                {{ movie.movieIntroduction }}
-              </p>
-              <div class="wrap-carousel-content">
-                <div class="wrap-star">
-                  <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
-                    <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
-                  </span>
-                  <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
-                    <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
-                  </span>
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <template v-for="movie in movies" :key="movie.id">
+          <!-- v-if="movie.is_hot === 1" -->
+          <div class="swiper-slide">
+            <div class="d-flex justify-content-center">
+              <img :src="movie.imgsUrl[0]" class="carousel-img" alt="oppen03" />
+              <div class="car-caption">
+                <div class="wrap-carousel-title">
+                  <h3 class="carousel-title">{{ movie.movieName }}</h3>
+                  <h3 class="carousel-title">{{ movie.movieEnglishName }}</h3>
                 </div>
-                <p class="fs-6 carousel-content2">{{ movie.info }}</p>
-                <button class="btn-carousel">
-                  <a href="#" class="fs-6 btn-index-a"
-                    >read more <span class="me-2"></span
-                    ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
-                  </a>
-                </button>
+                <p class="carousel-content fs-6">
+                  {{ movie.movieIntroduction }}
+                </p>
+                <div class="wrap-carousel-content">
+                  <div class="wrap-star">
+                    <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
+                      <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
+                    </span>
+                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
+                      <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
+                    </span>
+                  </div>
+                  <p class="fs-6 carousel-content2">{{ movie.info }}</p>
+                  <button class="btn-carousel">
+                    <a href="#" class="fs-6 btn-index-a"
+                      >read more <span class="me-2"></span
+                      ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
+                    </a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </swiper-slide>
-      </template>
+        </template>
+      </div>
+      <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
-    </swiper>
-
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import { mapState, mapActions } from 'pinia';
 import movieStore from '@/stores/movieStore';
@@ -66,19 +65,33 @@ import movieStore from '@/stores/movieStore';
 export default {
   data() {
     return {
-      modules: [Navigation, Pagination, Autoplay],
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
+      swiper1: null
     };
-  },
-  components: {
-    Swiper,
-    SwiperSlide
   },
   mounted() {
     this.getMovies();
+    this.swiper1 = new Swiper('.swiper1', {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true,
+      speed: 800,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        1200: {
+          slidesPerView: 1
+        }
+      }
+    });
   },
   computed: {
     ...mapState(movieStore, ['movies'])
@@ -91,13 +104,15 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/helpers/colors';
-
-.swiper-button-next,
-.swiper-button-prev {
-  @include lg() {
-    display: none;
-  }
+.swiper1 {
+  overflow: hidden;
 }
+// .swiper-button-next,
+// .swiper-button-prev {
+//   @include lg() {
+//     display: none;
+//   }
+// }
 .swiper-button-prev {
   background: url(/icons/leftArrow.png) center center no-repeat;
   background-size: 42px 60px;
@@ -136,16 +151,16 @@ export default {
 .carousel-img {
   max-width: 550px;
   height: 388px;
-  margin-left: 60px;
+  // margin-left: 20px;
   margin-top: 20px;
   border-radius: 20px;
   object-position: center center;
 }
 .car-caption {
-  max-width: 455px;
+  max-width: 390px;
   height: 440px;
   margin-top: 20px;
-  margin-left: 35px;
+  margin-left: 30px;
   background-color: $bg-c1;
 }
 .wrap-carousel-content {
@@ -154,7 +169,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  vertical-align: middle;
+  // vertical-align: middle;
 }
 .carousel-content {
   max-width: 400px;

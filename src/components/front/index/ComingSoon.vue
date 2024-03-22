@@ -16,7 +16,7 @@
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
       class="px-7"
     >
-      <template v-for="movie in movies" :key="movie.id">
+      <template v-for="movie in comingMovies" :key="movie.id">
         <!-- v-if="movie.is_hot === 1" -->
         <swiper-slide>
           <div class="wrap-card">
@@ -62,6 +62,7 @@ import movieStore from '@/stores/movieStore';
 export default {
   data() {
     return {
+      comingMovies: [],
       modules: [Navigation, Autoplay],
       navigation: {
         nextEl: '.swiper-button-next.sw2',
@@ -102,6 +103,11 @@ export default {
   },
   computed: {
     ...mapState(movieStore, ['movies'])
+  },
+  watch: {
+    movies() {
+      this.comingMovies = this.movies;
+    }
   },
   methods: {
     ...mapActions(movieStore, ['getMovies'])

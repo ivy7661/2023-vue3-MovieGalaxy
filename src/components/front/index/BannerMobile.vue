@@ -7,7 +7,7 @@
       :breakpoints="swiperOptions.breakpoints"
       :autoplay="{ delay: 2500, disableOnInteraction: false }"
     >
-      <template v-for="movie in movies" :key="movie.id">
+      <template v-for="movie in bannerMovies" :key="movie.id">
         <swiper-slide>
           <div class="d-flex justify-content-center">
             <RouterLink :to="`/movies/${movie.id}`">
@@ -53,6 +53,7 @@ import movieStore from '@/stores/movieStore';
 export default {
   data() {
     return {
+      bannerMovies: [],
       modules: [Autoplay],
       navigation: {
         nextEl: '.swiper-button-next',
@@ -93,6 +94,11 @@ export default {
   },
   computed: {
     ...mapState(movieStore, ['movies'])
+  },
+  watch: {
+    movies() {
+      this.bannerMovies = this.movies;
+    }
   },
   methods: {
     ...mapActions(movieStore, ['getMovies'])
