@@ -15,12 +15,224 @@
         "director": "克里斯多福·諾蘭",
         "actor": "席尼·墨菲、艾蜜莉·布朗、麥特·戴蒙"
       },
-      "image": "https://github.com/ivy7661/2023-vue3-MovieGalaxy/blob/main/public/images/movie_picture/Oppenheimer_3.jpg?raw=true",
+      "image": "https://i.meee.com.tw/97RkiWe.jpg",
       "images": [
-        "https://github.com/ivy7661/2023-vue3-MovieGalaxy/blob/main/public/images/movie_picture/Oppenheimer_1.jpg?raw=true"
+        "https://i.meee.com.tw/uii7iHw.jpg",
+        "https://i.meee.com.tw/ZOTR33I.jpg",
+        "https://i.meee.com.tw/sYEMq7G.jpg",
+        "https://i.meee.com.tw/EXRsLGY.png"
       ],
       "isHot": true,
-      "isComing": true
+      "isComing": true,
+      "onBanner": true
+    },
+    {
+      "id": 2,
+      "name": "小丑",
+      "englishName": "Joker",
+      "language": "英語",
+      "movieLength": "122分鐘",
+      "type": "劇情片",
+      "ratingStars": 5,
+      "videoId": "Eoook2Ee6q0",
+      "intro": "「小丑」這部戲圍繞在這個經典反派上，是大螢幕上前所未見的一部原創獨立故事。本片在探討亞瑟佛萊克 (瓦昆菲尼克斯飾)，一個被社會遺棄的人。他的故事不只是一個寫實的角色研究，更代表一個意義深遠的警示。",
+      "info": "本片的票房超過10億美元，為史上第一部破10億美元的R級電影",
+      "staff": {
+        "director": "克里斯多福·諾蘭",
+        "actor": "席尼·墨菲、艾蜜莉·布朗、麥特·戴蒙"
+      },
+      "image": "https://i.meee.com.tw/eiA07hz.jpg",
+      "images": [
+        "https://i.meee.com.tw/TpUb5hq.jpg",
+        "https://i.meee.com.tw/2sGJ9Sb.jpg",
+        "https://i.meee.com.tw/iDHQTPW.png",
+        "https://i.meee.com.tw/atqOD1Q.png"
+      ],
+      "isHot": true,
+      "isComing": false,
+      "onBanner": false
+    },
+    {
+      "id": 3,
+      "name": "鋼鐵英雄",
+      "englishName": "Hacksaw Ridge",
+      "language": "英語",
+      "movieLength": "139分鐘",
+      "type": "劇情片",
+      "ratingStars": 5,
+      "videoId": "pPbWGl7vKrg",
+      "intro": "劇情圍繞著美國陸軍軍醫戴斯蒙·T·杜斯（加菲爾德飾演）在第二次世界大戰沖繩島戰役的經歷。戴斯蒙是一名良心拒服兵役者，因家庭與宗教信仰而拒絕攜帶武器和殺人。",
+      "info": "一部優秀的反戰電影，具有和平的意涵",
+      "staff": {
+        "director": "梅爾·吉勃遜",
+        "actor": "安德魯·加菲爾德、文斯·范恩、山姆·沃辛頓"
+      },
+      "image": "https://i.meee.com.tw/IfoftT0.jpg",
+      "images": [
+        "https://i.meee.com.tw/CAIdUtQ.jpg",
+        "https://i.meee.com.tw/LLgdzm0.jpg",
+        "https://i.meee.com.tw/4fuWze4.jpg",
+        "https://i.meee.com.tw/BfHRSAx.jpg"
+      ],
+      "isHot": true,
+      "isComing": false,
+      "onBanner": true
+    },
+    {
+      "id": 4,
+      "name": "鳴鳥與游蛇之歌",
+      "englishName": "The Ballad of Songbirds and Snakes",
+      "language": "英語",
+      "movieLength": "157分鐘",
+      "type": "劇情片",
+      "ratingStars": 5,
+      "videoId": "",
+      "intro": "年輕的Coriolanus Snow如何在饑荒時期的潛在絕望中找到了自己的力量和命運。在為了生存而奮鬥的同時，他必須面對道德選擇和倫理困境，逐漸發現了自己真正的內心。",
+      "info": "為《飢餓遊戲三部曲》的前傳",
+      "staff": {
+        "director": "法蘭西斯·勞倫斯",
+        "actor": "湯姆·布萊斯、瑞秋·曾格勒、杭特·薛佛"
+      },
+      "image": "https://i.meee.com.tw/XgbFCez.jpg",
+      "images": [
+        "https://i.meee.com.tw/4Jn6rSz.jpg",
+        "https://i.meee.com.tw/4l9gobW.jpg",
+        "https://i.meee.com.tw/qmeg4qA.jpg",
+        "https://i.meee.com.tw/dxfd0f7.jpg"
+      ],
+      "isHot": true,
+      "isComing": true,
+      "onBanner": true
+    },
+    {
+      "id": 5,
+      "name": "不可能的任務：致命清算",
+      "englishName": "Mission: Impossible – Dead Reckoning",
+      "language": "英語",
+      "movieLength": "163分鐘",
+      "type": "動作片",
+      "ratingStars": 4,
+      "videoId": "",
+      "intro": "伊森·韓特和他的不可能任務情報局（IMF）團隊展開他們迄今為止最危險的任務：阻止一件威脅著全人類的危險武器落入惡人的手中；隨著世界的命運危在旦夕，伊森過去的黑暗勢力也找上門來。",
+      "info": "演員的表現、動作戲、攝影、幽默、情感刻畫皆為評論家讚譽的焦點",
+      "staff": {
+        "director": "克里斯多福·麥奎里",
+        "actor": "湯姆·克魯斯、海莉·艾特沃、文·雷姆斯"
+      },
+      "image": "https://i.meee.com.tw/XEuCtzP.jpg",
+      "images": [
+        "https://i.meee.com.tw/oTOiFbK.jpg",
+        "https://i.meee.com.tw/2w6hNiV.jpg",
+        "https://i.meee.com.tw/1R1DlqZ.jpg",
+        "https://i.meee.com.tw/tRdsU3u.jpg"
+      ],
+      "isHot": true,
+      "isComing": true,
+      "onBanner": false
+    },
+    {
+      "id": 6,
+      "name": "復仇者聯盟：終局之戰",
+      "englishName": "Avengers: Endgame",
+      "language": "英語",
+      "movieLength": "181分鐘",
+      "type": "動作片",
+      "ratingStars": 5,
+      "videoId": "",
+      "intro": "在彈指事件中倖存下來的復仇者聯盟成員與他們的盟友共同努力扭轉薩諾斯所造成的災難。",
+      "info": "獲得影評人及普羅大眾的廣泛讚譽，它還打破了無數的票房紀錄，全球票房收入超過27億美元",
+      "staff": {
+        "director": "安東尼·羅素",
+        "actor": "小勞勃·道尼、克里斯·伊凡、克里斯·漢斯沃"
+      },
+      "image": "https://i.meee.com.tw/sGqEfhL.jpg",
+      "images": [
+        "https://i.meee.com.tw/tLCEBbd.jpg",
+        "https://i.meee.com.tw/q3veDp1.jpg",
+        "https://i.meee.com.tw/0BS9mGc.jpg",
+        "https://i.meee.com.tw/w4epl4H.jpg"
+      ],
+      "isHot": true,
+      "isComing": true,
+      "onBanner": true
+    },
+    {
+      "id": 7,
+      "name": "沙丘",
+      "englishName": "Dune",
+      "language": "英語",
+      "movieLength": "155分鐘",
+      "type": "動作片",
+      "ratingStars": 5,
+      "videoId": "",
+      "intro": "出身貴族家庭的年輕繼承者背負起守護銀河系中最寶貴的資產也是最重要的元素。",
+      "info": "在第94屆奧斯卡金像獎上斬獲六項大獎",
+      "staff": {
+        "director": "丹尼·維勒納夫",
+        "actor": "提摩西·夏勒梅、蕾貝卡·弗格森、奧斯卡·伊薩克"
+      },
+      "image": "https://i.meee.com.tw/eoNPDnj.jpeg",
+      "images": [
+        "https://i.meee.com.tw/CfHjaWV.jpg",
+        "https://i.meee.com.tw/9k09Z7i.jpg",
+        "https://i.meee.com.tw/Idjdk8o.jpeg",
+        "https://i.meee.com.tw/fYetaLG.jpg"
+      ],
+      "isHot": true,
+      "isComing": false,
+      "onBanner": true
+    },
+    {
+      "id": 8,
+      "name": "之前的我們",
+      "englishName": "Past Lives",
+      "language": "韓語",
+      "movieLength": "106分鐘",
+      "type": "愛情片",
+      "ratingStars": 5,
+      "videoId": "",
+      "intro": "講述了兩個兒時好友重聚的故事，他們思考著彼此的關係以及自己的日常生活。",
+      "info": "影評界對宋的編導能力以及三位主演的演出給予一致好評",
+      "staff": {
+        "director": "席琳·宋",
+        "actor": "葛莉塔·李、劉台午、約翰·馬加羅"
+      },
+      "image": "https://i.meee.com.tw/BB3ogfy.jpg",
+      "images": [
+        "https://i.meee.com.tw/I14z4pr.jpg",
+        "https://i.meee.com.tw/BQQcl3B.jpg",
+        "https://i.meee.com.tw/1lO9ZId.jpg",
+        "https://i.meee.com.tw/bXPSVFv.jpg"
+      ],
+      "isHot": true,
+      "isComing": false,
+      "onBanner": true
+    },
+    {
+      "id": 9,
+      "name": "東京復仇者",
+      "englishName": "",
+      "language": "日語",
+      "movieLength": "120分鐘",
+      "type": "劇情片",
+      "ratingStars": 4,
+      "videoId": "",
+      "intro": "主角花垣武道企圖用穿越時空的能力拯救親友，以不良少年為題材的青春熱血漫畫作品。",
+      "info": "電影票房總計45億日圓，名列2021年日本真人電影票房冠軍",
+      "staff": {
+        "director": "英勉",
+        "actor": "北村匠海、山田裕貴、杉野遙亮"
+      },
+      "image": "https://i.meee.com.tw/7fUqn2W.jpg",
+      "images": [
+        "https://i.meee.com.tw/SratMp3.jpg",
+        "https://i.meee.com.tw/bMSYcut.jpeg",
+        "https://i.meee.com.tw/LiV3cFW.jpg",
+        "https://i.meee.com.tw/V6t7QK5.jpg"
+      ],
+      "isHot": false,
+      "isComing": true,
+      "onBanner": false
     }
   ]
 }

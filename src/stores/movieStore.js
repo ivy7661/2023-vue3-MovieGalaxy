@@ -9,7 +9,7 @@ export default defineStore('movieStore', {
   actions: {
     getMovies() {
       axios
-        .get(`${VITE_API_URL}/movieDatas`)
+        .get(`${VITE_API_URL}/movies`)
         .then((res) => {
           this.movies = res.data;
           console.log(this.movies);

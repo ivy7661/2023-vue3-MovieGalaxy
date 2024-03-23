@@ -21,7 +21,7 @@
         <swiper-slide>
           <div class="wrap-card">
             <div class="d-flex justify-content-center">
-              <RouterLink :to="`/movies/${movie.id}`">
+              <RouterLink to="">
                 <img :src="movie.imgUrl" :alt="movie.title" class="w-100 d-block rounded-3 pic" />
               </RouterLink>
             </div>

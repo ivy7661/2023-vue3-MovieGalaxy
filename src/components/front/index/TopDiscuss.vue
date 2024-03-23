@@ -11,11 +11,7 @@
     <div class="top-discuss d-none d-lg-block">
       <div class="blur-bg">
         <div class="discuss-section">
-          <img
-            src="https://github.com/ivy7661/2023-vue3-MovieGalaxy/blob/main/public/images/movie_picture/Oppenheimer_3.jpg?raw=true"
-            class="img-oppen"
-            alt="Oppen"
-          />
+          <img src="https://i.meee.com.tw/97RkiWe.jpg" class="img-oppen" alt="Oppen" />
           <!-- text -->
           <div class="discuss-movie">
             <h3>奧本海默</h3>
@@ -43,7 +39,7 @@
     <div class="wrap-card d-lg-none">
       <div class="d-flex justify-content-center">
         <img
-          src="https://github.com/ivy7661/2023-vue3-MovieGalaxy/blob/main/public/images/movie_picture/Oppenheimer_3.jpg?raw=true"
+          src="https://i.meee.com.tw/97RkiWe.jpg"
           alt="movie"
           class="w-100 d-block rounded-3 img-oppen"
         />

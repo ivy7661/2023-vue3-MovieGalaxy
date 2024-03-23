@@ -17,8 +17,8 @@
           <div class="swiper-slide">
             <div class="wrap-card">
               <div class="d-flex justify-content-center">
-                <RouterLink :to="`/movies/${movie.id}`">
-                  <img :src="movie.imgUrl" :alt="movie.title" class="w-100 d-block rounded-3 pic" />
+                <RouterLink to="">
+                  <img :src="movie.image" :alt="movie.name" class="w-100 d-block rounded-3 pic" />
                 </RouterLink>
               </div>
               <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
@@ -30,7 +30,7 @@
                     <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
                   </span>
                 </div>
-                <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.movieName }}</h4>
+                <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
                 <btton class="btn-vedio">
                   <a href="#" class="vedio-link">
                     <img src="/icons/PlayButton_grey.png" alt="" /><span class="me-2"></span>預告片
@@ -70,7 +70,7 @@ export default {
     this.getMovies();
     this.swiper2 = new Swiper('.swiper2', {
       modules: [Navigation, Autoplay],
-      loop: true,
+      loop: false,
       speed: 800,
       navigation: {
         nextEl: '.swiper-button-next2',

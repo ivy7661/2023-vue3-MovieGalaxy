@@ -11,14 +11,13 @@
           <!-- v-if="movie.is_hot === 1" -->
           <div class="swiper-slide">
             <div class="d-flex justify-content-center">
-              <img :src="movie.imgsUrl[0]" class="carousel-img" alt="oppen03" />
-              <div class="car-caption">
-                <div class="wrap-carousel-title">
-                  <h3 class="carousel-title">{{ movie.movieName }}</h3>
-                  <h3 class="carousel-title">{{ movie.movieEnglishName }}</h3>
-                </div>
+              <img :src="movie.images[0]" class="carousel-img" alt="oppen03" />
+              <div class="car-caption d-flex flex-column">
+                <h3 class="carousel-title">{{ movie.name }}</h3>
+                <h3 class="carousel-title">{{ movie.englishName }}</h3>
+
                 <p class="carousel-content fs-6">
-                  {{ movie.movieIntroduction }}
+                  {{ movie.intro }}
                 </p>
                 <div class="wrap-carousel-content">
                   <div class="wrap-star">
@@ -72,7 +71,7 @@ export default {
     this.getMovies();
     this.swiper1 = new Swiper('.swiper1', {
       modules: [Navigation, Pagination, Autoplay],
-      loop: true,
+      loop: false,
       speed: 800,
       pagination: {
         el: '.swiper-pagination',

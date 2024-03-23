@@ -21,7 +21,14 @@ export default defineConfig(({ command, mode }) => {
   return {
     base: mode === 'production' ? `/${env.REPOSITORY_NAME}/` : '/',
     plugins: [
-      vue(),
+      vue({
+        template: {
+          compilerOptions: {
+            // i am ignorning my custom '<btton>' tag
+            isCustomElement: (tag) => ['btton'].includes(tag)
+          }
+        }
+      }),
       eslintPlugin({
         include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
       })
