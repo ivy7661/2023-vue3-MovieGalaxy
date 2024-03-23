@@ -33,7 +33,7 @@
                 <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
                 <btton class="btn-vedio">
                   <a href="#" class="vedio-link">
-                    <img src="/icons/PlayButton_grey.png" alt="" /><span class="me-2"></span>預告片
+                    <img src="/icons/PlayButton.svg" alt="" /><span class="me-2"></span>預告片
                   </a>
                 </btton>
               </div>
@@ -51,7 +51,6 @@
 <script>
 import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
-// import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

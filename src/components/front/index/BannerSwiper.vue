@@ -8,37 +8,38 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <template v-for="movie in movies" :key="movie.id">
-          <!-- v-if="movie.is_hot === 1" -->
-          <div class="swiper-slide">
-            <div class="d-flex justify-content-center">
-              <img :src="movie.images[0]" class="carousel-img" alt="oppen03" />
-              <div class="car-caption d-flex flex-column">
-                <h3 class="carousel-title">{{ movie.name }}</h3>
-                <h3 class="carousel-title">{{ movie.englishName }}</h3>
-
-                <p class="carousel-content fs-6">
-                  {{ movie.intro }}
-                </p>
-                <div class="wrap-carousel-content">
-                  <div class="wrap-star">
-                    <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
-                      <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
-                    </span>
-                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
-                      <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
-                    </span>
+          <!--  -->
+          <template v-if="movie.on_banner === 1">
+            <div class="swiper-slide">
+              <div class="d-flex justify-content-center">
+                <img :src="movie.images[0]" class="carousel-img" alt="oppen03" />
+                <div class="car-caption d-flex flex-column">
+                  <h3 class="carousel-title">{{ movie.name }}</h3>
+                  <h3 class="carousel-title">{{ movie.englishName }}</h3>
+                  <p class="carousel-content fs-6">
+                    {{ movie.intro }}
+                  </p>
+                  <div class="wrap-carousel-content">
+                    <div class="wrap-star">
+                      <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
+                        <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
+                      </span>
+                      <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
+                        <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
+                      </span>
+                    </div>
+                    <p class="fs-6 carousel-content2">{{ movie.info }}</p>
+                    <button class="btn-carousel">
+                      <a href="#" class="fs-6 btn-index-a"
+                        >read more <span class="me-2"></span
+                        ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
+                      </a>
+                    </button>
                   </div>
-                  <p class="fs-6 carousel-content2">{{ movie.info }}</p>
-                  <button class="btn-carousel">
-                    <a href="#" class="fs-6 btn-index-a"
-                      >read more <span class="me-2"></span
-                      ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
-                    </a>
-                  </button>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </template>
       </div>
       <!-- If we need pagination -->

@@ -22,9 +22,9 @@
         "https://i.meee.com.tw/sYEMq7G.jpg",
         "https://i.meee.com.tw/EXRsLGY.png"
       ],
-      "isHot": true,
-      "isComing": true,
-      "onBanner": true
+      "is_hot": 1,
+      "is_coming": 1,
+      "on_banner": 1
     },
     {
       "id": 2,
@@ -35,7 +35,7 @@
       "type": "劇情片",
       "ratingStars": 5,
       "videoId": "Eoook2Ee6q0",
-      "intro": "「小丑」這部戲圍繞在這個經典反派上，是大螢幕上前所未見的一部原創獨立故事。本片在探討亞瑟佛萊克 (瓦昆菲尼克斯飾)，一個被社會遺棄的人。他的故事不只是一個寫實的角色研究，更代表一個意義深遠的警示。",
+      "intro": "「小丑」這部戲圍繞在這個經典反派上，是大螢幕上前所未見的一部原創獨立故事。他的故事不只是一個寫實的角色研究，更代表一個意義深遠的警示。",
       "info": "本片的票房超過10億美元，為史上第一部破10億美元的R級電影",
       "staff": {
         "director": "克里斯多福·諾蘭",
@@ -48,9 +48,9 @@
         "https://i.meee.com.tw/iDHQTPW.png",
         "https://i.meee.com.tw/atqOD1Q.png"
       ],
-      "isHot": true,
-      "isComing": false,
-      "onBanner": false
+      "is_hot": 1,
+      "is_coming": 0,
+      "on_banner": 0
     },
     {
       "id": 3,
@@ -74,9 +74,9 @@
         "https://i.meee.com.tw/4fuWze4.jpg",
         "https://i.meee.com.tw/BfHRSAx.jpg"
       ],
-      "isHot": true,
-      "isComing": false,
-      "onBanner": true
+      "is_hot": 1,
+      "is_coming": 0,
+      "on_banner": 1
     },
     {
       "id": 4,
@@ -100,9 +100,9 @@
         "https://i.meee.com.tw/qmeg4qA.jpg",
         "https://i.meee.com.tw/dxfd0f7.jpg"
       ],
-      "isHot": true,
-      "isComing": true,
-      "onBanner": true
+      "is_hot": 1,
+      "is_coming": 1,
+      "on_banner": 1
     },
     {
       "id": 5,
@@ -113,7 +113,7 @@
       "type": "動作片",
       "ratingStars": 4,
       "videoId": "",
-      "intro": "伊森·韓特和他的不可能任務情報局（IMF）團隊展開他們迄今為止最危險的任務：阻止一件威脅著全人類的危險武器落入惡人的手中；隨著世界的命運危在旦夕，伊森過去的黑暗勢力也找上門來。",
+      "intro": "伊森·韓特和他的不可能任務情報局（IMF）團隊展開他們迄今為止最危險的任務：阻止一件威脅著全人類的危險武器落入惡人的手中。",
       "info": "演員的表現、動作戲、攝影、幽默、情感刻畫皆為評論家讚譽的焦點",
       "staff": {
         "director": "克里斯多福·麥奎里",
@@ -126,9 +126,9 @@
         "https://i.meee.com.tw/1R1DlqZ.jpg",
         "https://i.meee.com.tw/tRdsU3u.jpg"
       ],
-      "isHot": true,
-      "isComing": true,
-      "onBanner": false
+      "is_hot": 1,
+      "is_coming": 1,
+      "on_banner": 0
     },
     {
       "id": 6,
@@ -152,9 +152,9 @@
         "https://i.meee.com.tw/0BS9mGc.jpg",
         "https://i.meee.com.tw/w4epl4H.jpg"
       ],
-      "isHot": true,
-      "isComing": true,
-      "onBanner": true
+      "is_hot": 1,
+      "is_coming": 1,
+      "on_banner": 0
     },
     {
       "id": 7,
@@ -178,9 +178,9 @@
         "https://i.meee.com.tw/Idjdk8o.jpeg",
         "https://i.meee.com.tw/fYetaLG.jpg"
       ],
-      "isHot": true,
-      "isComing": false,
-      "onBanner": true
+      "is_hot": 1,
+      "is_coming": 0,
+      "on_banner": 1
     },
     {
       "id": 8,
@@ -204,9 +204,9 @@
         "https://i.meee.com.tw/1lO9ZId.jpg",
         "https://i.meee.com.tw/bXPSVFv.jpg"
       ],
-      "isHot": true,
-      "isComing": false,
-      "onBanner": true
+      "is_hot": 1,
+      "is_coming": 0,
+      "on_banner": 1
     },
     {
       "id": 9,
@@ -230,9 +230,9 @@
         "https://i.meee.com.tw/LiV3cFW.jpg",
         "https://i.meee.com.tw/V6t7QK5.jpg"
       ],
-      "isHot": false,
-      "isComing": true,
-      "onBanner": false
+      "is_hot": 0,
+      "is_coming": 1,
+      "on_banner": 1
     }
   ]
 }

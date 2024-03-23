@@ -4,7 +4,7 @@
     <BannerMobile class="d-lg-none"></BannerMobile>
     <PopularSwiper></PopularSwiper>
     <TopDiscuss></TopDiscuss>
-    <!-- <ComingSoon></ComingSoon> -->
+    <ComingSoon></ComingSoon>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import BannerSwiper from '@/components/front/index/BannerSwiper.vue';
 import BannerMobile from '@/components/front/index/BannerMobile.vue';
 import PopularSwiper from '@/components/front/index/PopularSwiper.vue';
 import TopDiscuss from '@/components/front/index/TopDiscuss.vue';
-// import ComingSoon from '@/components/front/index/ComingSoon.vue';
+import ComingSoon from '@/components/front/index/ComingSoon.vue';
 
 export default {
   data() {
@@ -23,8 +23,8 @@ export default {
     BannerSwiper,
     BannerMobile,
     PopularSwiper,
-    TopDiscuss
-    // ComingSoon
+    TopDiscuss,
+    ComingSoon
   },
   mounted() {},
   methods: {}
