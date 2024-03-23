@@ -2,11 +2,7 @@
   <nav class="navbar navbar-expand-lg bg-light-green py-3">
     <div class="container">
       <RouterLink to="/">
-        <img
-          src="/images/movie_picture/LOGO.png"
-          alt="logo"
-          class="d-inline-block navbar-logo ms-2"
-        />
+        <img src="/images/LOGO.png" alt="logo" class="d-inline-block navbar-logo ms-2" />
       </RouterLink>
       <div class="d-flex align-items-center">
         <!-- 手機  icon-->
