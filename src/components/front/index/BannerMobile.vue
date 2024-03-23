@@ -5,36 +5,37 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <template v-for="movie in bannerMovies" :key="movie.id">
-          <div class="swiper-slide">
-            <div class="d-flex justify-content-center">
-              <RouterLink to="">
-                <img :src="movie.images[0]" :alt="movie.title" class="d-block rounded-3 pic" />
-              </RouterLink>
-            </div>
-
-            <div class="d-flex justify-content-center">
-              <div class="car-caption d-flex flex-column justify-content-center">
-                <div class="wrap-carousel-title mt-2">
-                  <h3 class="carousel-title">{{ movie.name }}</h3>
-                  <h3 class="carousel-title text-center">{{ movie.englishName }}</h3>
-                </div>
-                <p class="carousel-content text-center fs-6">
-                  {{ movie.intro }}
-                </p>
-                <div class="wrap-carousel-content">
-                  <div class="wrap-star mb-2">
-                    <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
-                      <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
-                    </span>
-                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
-                      <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
-                    </span>
+          <template v-if="movie.on_banner === 1">
+            <div class="swiper-slide">
+              <div class="d-flex justify-content-center">
+                <RouterLink to="">
+                  <img :src="movie.images[0]" :alt="movie.title" class="d-block rounded-3 pic" />
+                </RouterLink>
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="car-caption d-flex flex-column justify-content-center">
+                  <div class="wrap-carousel-title mt-2">
+                    <h3 class="carousel-title">{{ movie.name }}</h3>
+                    <h3 class="carousel-title text-center">{{ movie.englishName }}</h3>
                   </div>
-                  <p class="fs-6 carousel-content2">{{ movie.info }}</p>
+                  <p class="carousel-content text-center fs-6">
+                    {{ movie.intro }}
+                  </p>
+                  <div class="wrap-carousel-content">
+                    <div class="wrap-star mb-2">
+                      <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
+                        <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
+                      </span>
+                      <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
+                        <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
+                      </span>
+                    </div>
+                    <p class="fs-6 carousel-content2">{{ movie.info }}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </template>
       </div>
     </div>

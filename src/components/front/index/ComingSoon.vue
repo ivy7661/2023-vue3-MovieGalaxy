@@ -13,32 +13,33 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <template v-for="movie in popularMovies" :key="movie.id">
-          <!-- v-if="movie.is_hot === 1" -->
-          <div class="swiper-slide">
-            <div class="wrap-card">
-              <div class="d-flex justify-content-center">
-                <RouterLink to="">
-                  <img :src="movie.image" :alt="movie.name" class="w-100 d-block rounded-3 pic" />
-                </RouterLink>
-              </div>
-              <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
-                <div class="d-flex">
-                  <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                    <img src="/icons/star1.png" alt="star-full" class="star1" />
-                  </span>
-                  <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                    <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
-                  </span>
+          <template v-if="movie.is_coming === 1">
+            <div class="swiper-slide">
+              <div class="wrap-card">
+                <div class="d-flex justify-content-center">
+                  <RouterLink to="">
+                    <img :src="movie.image" :alt="movie.name" class="w-100 d-block rounded-3 pic" />
+                  </RouterLink>
                 </div>
-                <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
-                <btton class="btn-vedio">
-                  <a href="#" class="vedio-link">
-                    <img src="/icons/PlayButton.svg" alt="" /><span class="me-2"></span>預告片
-                  </a>
-                </btton>
+                <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
+                  <div class="d-flex">
+                    <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-lg-1">
+                      <img src="/icons/star1.png" alt="star-full" class="star1" />
+                    </span>
+                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-lg-1">
+                      <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
+                    </span>
+                  </div>
+                  <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
+                  <btton class="btn-vedio">
+                    <a href="#" class="vedio-link">
+                      <img src="/icons/PlayButton.svg" alt="" /><span class="me-2"></span>預告片
+                    </a>
+                  </btton>
+                </div>
               </div>
             </div>
-          </div>
+          </template>
         </template>
       </div>
       <!-- If we need navigation buttons -->
