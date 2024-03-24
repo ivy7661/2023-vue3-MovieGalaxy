@@ -7,9 +7,7 @@
         <h3 class="subtitle fs-6 fw-normal">即將上映</h3>
       </div>
     </div>
-    <!-- swiper -->
     <div class="swiper3 rounded-3 position-relative px-10">
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
         <template v-for="movie in popularMovies" :key="movie.id">
@@ -42,7 +40,6 @@
           </template>
         </template>
       </div>
-      <!-- If we need navigation buttons -->
       <div class="swiper-button-prev3"></div>
       <div class="swiper-button-next3"></div>
     </div>
@@ -264,7 +261,6 @@ export default {
   border: 2px solid #b88ed3;
   box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
 }
-// top 10
 .bg-title {
   padding: 30px;
   max-width: 1210px;
