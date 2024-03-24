@@ -7,8 +7,20 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <template v-for="movie in movies" :key="movie.id">
-          <!--  -->
+        <div class="swiper-slide">
+          <h1>slide1</h1>
+        </div>
+        <div class="swiper-slide">
+          <h1>slide2</h1>
+        </div>
+        <div class="swiper-slide">
+          <h1>slide3</h1>
+        </div>
+        <div class="swiper-slide">
+          <h1>slide4</h1>
+        </div>
+        <!-- official -->
+        <!-- <template v-for="movie in movies" :key="movie.id">
           <template v-if="movie.on_banner === 1">
             <div class="swiper-slide">
               <div class="d-flex justify-content-center">
@@ -40,7 +52,7 @@
               </div>
             </div>
           </template>
-        </template>
+        </template> -->
       </div>
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>

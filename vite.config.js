@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -13,8 +13,13 @@ const DRIVE_LETTER_REGEX = /^[a-z]:/i;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
+  // 根據當前工作目錄中的 `mode` 加載 .env 文件
+  // 設置第三個參數為 '' 來加載所有環境變量，而不管是否有 `VITE_` 前綴
+  const env = loadEnv(mode, process.cwd(), '');
+  console.log('REPOSITORY NAME : ', env.REPOSITORY_NAME);
+
   return {
-    base: '/',
+    base: mode === 'production' ? `/${env.REPOSITORY_NAME}/` : '/',
     plugins: [
       vue({
         template: {
