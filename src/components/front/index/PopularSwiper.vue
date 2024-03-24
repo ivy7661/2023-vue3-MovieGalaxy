@@ -121,7 +121,7 @@ export default {
   overflow: hidden;
 }
 .swiper-button-prev2 {
-  background: url(/icons/leftArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_prev.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 230px;
   left: 5px;
@@ -132,7 +132,7 @@ export default {
   z-index: 999;
 }
 .swiper-button-next2 {
-  background: url(/icons/rightArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_next.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 230px;
   right: 5px;

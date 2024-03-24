@@ -30,7 +30,7 @@
         <button class="btn-carousel">
           <a href="" class="btn-index-a"
             >read more <span class="ml-15"></span
-            ><img src="/icons/PlayButton_purple.png" alt="" class="mb-1 ms-1" />
+            ><img src="/icons/PlayButton_purple.svg" alt="" class="mb-1 ms-1" />
           </a>
         </button>
       </div>
@@ -61,7 +61,7 @@
         <button class="btn-carousel">
           <a href="" class="btn-index-a"
             >read more <span class="ml-15"></span
-            ><img src="/icons/PlayButton_purple.png" alt="" class="mb-1 ms-1" />
+            ><img src="/icons/PlayButton_purple.svg" alt="" class="mb-1 ms-1" />
           </a>
         </button>
       </div>

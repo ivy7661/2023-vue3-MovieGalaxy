@@ -29,7 +29,7 @@
                     <button class="btn-carousel">
                       <a href="#" class="fs-6 btn-index-a"
                         >read more <span class="me-2"></span
-                        ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
+                        ><img src="/icons/PlayButton_purple.svg" alt="" class="pb-1" />
                       </a>
                     </button>
                   </div>
@@ -102,7 +102,7 @@ export default {
   overflow: hidden;
 }
 .swiper-button-prev {
-  background: url(/icons/leftArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_prev.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 200px;
   left: 5px;
@@ -111,7 +111,7 @@ export default {
   color: transparent;
 }
 .swiper-button-next {
-  background: url(/icons/rightArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_next.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 200px;
   right: 5px;
