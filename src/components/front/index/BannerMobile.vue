@@ -1,7 +1,6 @@
 <template>
   <div class="mb-5">
     <div class="swiper0 rounded-3 position-relative">
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
         <template v-for="movie in bannerMovies" :key="movie.id">
@@ -127,7 +126,6 @@ export default {
   background-color: $bg-c1;
 }
 .wrap-carousel-content {
-  // height: 100px;
   display: flex;
   flex-direction: column;
 }

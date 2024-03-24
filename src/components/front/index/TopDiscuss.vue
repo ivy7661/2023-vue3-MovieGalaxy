@@ -198,7 +198,6 @@
 .star1 {
   max-width: 30px;
 }
-
 .wrap-card {
   max-width: 700px;
   display: flex;

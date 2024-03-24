@@ -62,8 +62,6 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   z-index: 1021;
-
-  // background: #3e404b;
 }
 
 .mainView {

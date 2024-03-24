@@ -1,10 +1,8 @@
 <template>
-  <!-- Slider main container -->
   <div class="mb-lg-10 d-flex justify-content-center">
     <div class="swiper1 rounded-3 position-relative">
       <div class="bg-green d-none d-lg-block"></div>
       <div class="bg-pink"></div>
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
         <template v-for="movie in movies" :key="movie.id">
@@ -41,9 +39,7 @@
           </template>
         </template>
       </div>
-      <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
-      <!-- If we need navigation buttons -->
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
     </div>
@@ -53,7 +49,6 @@
 <script>
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-// import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -144,7 +139,6 @@ export default {
 .carousel-img {
   max-width: 550px;
   height: 388px;
-  // margin-left: 20px;
   margin-top: 20px;
   border-radius: 20px;
   object-position: center center;
@@ -162,7 +156,6 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  // vertical-align: middle;
 }
 .carousel-content {
   max-width: 400px;
