@@ -17,7 +17,7 @@
             <h3>奧本海默</h3>
             <div class="d-flex">
               <span v-for="i in 5" :key="i + 123" class="mx-lg-1">
-                <img src="/icons/star1.png" alt="star-full" class="star1" />
+                <img src="/icons/star_full.svg" alt="star-full" class="star1" />
               </span>
             </div>
             <h4>第96屆奧斯卡劇情類最佳影片</h4>
@@ -50,7 +50,7 @@
         <h4 class="fs-5 text-white mb-2 mb-lg-3">奧本海默</h4>
         <div class="d-flex">
           <span v-for="i in 5" :key="i + 123" class="mx-lg-1">
-            <img src="/icons/star1.png" alt="star-full" class="star1" />
+            <img src="/icons/star_full.svg" alt="star-full" class="star1" />
           </span>
         </div>
         <p class="text-white">第96屆奧斯卡劇情類最佳影片</p>

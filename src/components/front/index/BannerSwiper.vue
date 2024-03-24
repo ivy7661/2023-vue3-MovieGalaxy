@@ -19,10 +19,10 @@
                   <div class="wrap-carousel-content">
                     <div class="wrap-star">
                       <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
-                        <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
+                        <img src="/icons/star_full.svg" alt="star-full" width="30" height="30" />
                       </span>
                       <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
-                        <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
+                        <img src="/icons/star_empty.svg" alt="star-empty" width="23" height="23" />
                       </span>
                     </div>
                     <p class="fs-6 carousel-content2">{{ movie.info }}</p>

@@ -20,12 +20,12 @@
                   </RouterLink>
                 </div>
                 <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
-                  <div class="d-flex">
-                    <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                      <img src="/icons/star1.png" alt="star-full" class="star1" />
+                  <div class="d-flex justify-content-center">
+                    <span v-for="i in movie.ratingStars" :key="i + 123" class="me-lg-1">
+                      <img src="/icons/star_full.svg" alt="star-full" class="star" />
                     </span>
-                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                      <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
+                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="me-lg-1">
+                      <img src="/icons/star_empty.svg" alt="star-empty" class="star" />
                     </span>
                   </div>
                   <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
@@ -296,10 +296,7 @@ export default {
   background: #97794c;
   filter: blur(150px);
 }
-.star1 {
+.star {
   max-width: 30px;
-}
-.star0 {
-  max-width: 23px;
 }
 </style>
