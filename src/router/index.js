@@ -10,28 +10,13 @@ const router = createRouter({
         {
           path: '',
           component: () => import('@/views/front/HomeView.vue')
+        },
+        {
+          path: 'login',
+          component: () => import('@/views/front/LoginView.vue')
         }
       ]
     }
-    // {
-    //   path: '/adminLogin',
-    //   component: () => import('')
-    // },
-    // {
-    //   path: '/admin',
-    //   component: () => import(''),
-    //   children: [
-    //     {
-    //       path: 'accounts',
-    //       component: () => import('')
-    //     }
-    //   ]
-    // },
-    // {
-    //   path: '/:pathMatch(.*)*',
-    //   name: 'NotFound',
-    //   component: () => import('')
-    // }
   ],
   linkActiveClass: 'active',
   scrollBehavior(to, from, savedPosition) {

@@ -35,7 +35,9 @@
             >
           </li>
           <li class="nav-item mb-2 mb-lg-0">
-            <RouterLink to="" class="nav-link d-inline-block text-white fw-bold fs-6 pt-3 mx-2"
+            <RouterLink
+              to="/login"
+              class="nav-link d-inline-block text-white fw-bold fs-6 pt-3 mx-2"
               >註冊/登入</RouterLink
             >
           </li>
