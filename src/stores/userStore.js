@@ -13,7 +13,7 @@ export default defineStore('userStore', {
     }
   },
   setUser(newUser) {
-    // console.log('newUser', newUser);
+    console.log('newUser', newUser);
     this.user = {
       ...newUser
     };

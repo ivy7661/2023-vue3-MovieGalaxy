@@ -2,21 +2,23 @@
   <div class="row justify-content-center my-6">
     <div class="login-container d-flex flex-column justify-content-center align-items-center py-5">
       <h2>Login</h2>
-      <div class="d-flex flex-row">
-        <div class="d-flex align-items-center">
-          <img src="/icons/user.svg" alt="account" width="20" class="me-3" />
+      <form @submit="login" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-row mb-3">
+          <div class="d-flex align-items-center">
+            <img src="/icons/user.svg" alt="account" width="20" class="me-3" />
+          </div>
+          <input type="text" class="login-input" placeholder="帳號" v-model="email" />
         </div>
-        <input type="text" class="login-input" placeholder="帳號" />
-      </div>
-      <div class="d-flex flex-row">
-        <div class="d-flex align-items-center">
-          <img src="/icons/password.svg" alt="password" width="20" class="me-3" />
+        <div class="d-flex flex-row mb-3">
+          <div class="d-flex align-items-center">
+            <img src="/icons/password.svg" alt="password" width="20" class="me-3" />
+          </div>
+          <input type="text" class="login-input" placeholder="密碼" v-model="password" />
         </div>
-        <input type="text" class="login-input" placeholder="密碼" />
-      </div>
-      <button type="button" class="btn-login">
-        <span class="login-text">登入</span>
-      </button>
+        <button type="submit" class="btn-login">
+          <span class="login-text">登入</span>
+        </button>
+      </form>
       <div class="d-lg-flex flex-lg-row align-items-center">
         <div class="text-white mb-2 mb-lg-0 me-lg-2">還不是會員嗎？</div>
         <router-link to="/signup">
@@ -28,6 +30,49 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+import { mapActions } from 'pinia';
+import userStore from '@/stores/userStore';
+import Alert from '@/utils/swal.js';
+
+export default {
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
+  },
+  methods: {
+    ...mapActions(userStore, ['setUser', 'setUserCookie']),
+    login() {
+      const url = `${import.meta.env.VITE_API_URL}/login`;
+      const userData = {
+        email: this.email,
+        password: this.password
+      };
+
+      axios
+        .post(url, userData)
+        .then((res) => {
+          this.email = '';
+          this.password = '';
+          if (res.data.accessToken && res.data.user.role === 'user') {
+            this.setUserCookie(res.data.user.id, res.data.accessToken);
+            // this.setUser(res.data.user);
+          }
+          Alert.toastTop('success', '登入成功');
+          this.$router.replace('/');
+        })
+        .catch((err) => {
+          console.log(err);
+          Alert.toastTop('error', err.response.data);
+        });
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/helpers/colors';
@@ -51,6 +96,7 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 .login-input {
+  color: #fff;
   max-width: 250px;
   height: 40px;
   padding: 10px 20px;
