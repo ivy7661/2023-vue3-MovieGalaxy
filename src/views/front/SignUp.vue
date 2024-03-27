@@ -208,10 +208,6 @@ h2 {
 .btn-signup {
   width: 160px;
   height: 30px;
-  // justify-content: center;
-  // align-items: center;
-  // gap: 40px;
-  // flex-shrink: 0;
   border-radius: 20px;
   border: 2px solid #cb5af380;
   background: linear-gradient(96deg, #8c5a78 3.46%, #553147 97.41%);
