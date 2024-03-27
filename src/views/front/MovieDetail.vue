@@ -84,7 +84,7 @@ import Alert from '@/utils/swal.js';
 export default {
   data() {
     return {
-      vt_url: 'https://www.youtube.com/watch?v=cnc8mDAB7QI',
+      vt_url: '',
       videoID: '',
       ytlink: '',
       imgs: [],
