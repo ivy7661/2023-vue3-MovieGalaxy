@@ -1,23 +1,22 @@
 <template>
-  <!-- 記得改動態路由 -->
   <section class="d-flex flex-column flex-lg-row py-8">
     <div class="col-12 col-lg-5 justify-content-center me-lg-5 mb-5 mb-lg-0">
-      <div class="px-5">
-        <img src="https://i.meee.com.tw/97RkiWe.jpg" alt="電影海報" class="poster" />
+      <div class="d-flex justify-content-center">
+        <img :src="movieInfo.image" alt="電影海報" class="poster" />
       </div>
     </div>
     <div class="col-12 col-lg-6">
       <div class="d-flex flex-column text-white">
         <div class="d-flex flex-column align-items-center align-items-lg-start">
-          <h2 class="mb-2">奧本海默</h2>
-          <h2 class="text-uppercase">Oppenheimer</h2>
+          <h2 class="mb-2">{{ movieInfo.name }}</h2>
+          <h2 class="text-uppercase">{{ movieInfo.englishName }}</h2>
           <div class="d-flex justify-content-start my-4">
-            <span v-for="i in 5" :key="i + 123" class="me-lg-1">
+            <span v-for="i in movieInfo.ratingStars" :key="i + 123" class="me-lg-1">
               <img src="/icons/star_full.svg" alt="star-full" class="star" />
             </span>
-            <!-- <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="me-lg-1">
+            <span v-for="i in 5 - movieInfo.ratingStars" :key="i + 123" class="me-lg-1">
               <img src="/icons/star_empty.svg" alt="star-empty" class="star" />
-            </span> -->
+            </span>
           </div>
           <button class="btn-view mb-8">
             <div class="text-view">查看影評</div>
@@ -25,16 +24,16 @@
         </div>
         <p class="fw-bold">電影簡介:</p>
         <p class="movie-intro">
-          美國科學家 J. 羅伯特·奧本海默的故事以及他在原子彈研發中所扮演的角色。
+          {{ movieInfo.intro }}
         </p>
         <hr />
         <div class="d-flex flex-row mb-2">
           <span class="fw-bold">導演：</span>
-          <span>克里斯多福·諾蘭</span>
+          <span>{{ movieInfo.staff.director }}</span>
         </div>
         <div class="d-flex flex-row">
           <span class="fw-bold">主演：</span>
-          <span> 席尼·墨菲、艾蜜莉·布朗、麥特·戴蒙</span>
+          <span> {{ movieInfo.staff.actor }}</span>
         </div>
       </div>
     </div>
@@ -80,26 +79,51 @@
 </template>
 
 <script>
+import axios from 'axios';
+import Alert from '@/utils/swal.js';
 export default {
   data() {
     return {
       vt_url: 'https://www.youtube.com/watch?v=cnc8mDAB7QI',
       videoID: '',
       ytlink: '',
-      imgs: [
-        'https://i.meee.com.tw/uii7iHw.jpg',
-        'https://i.meee.com.tw/ZOTR33I.jpg',
-        'https://i.meee.com.tw/sYEMq7G.jpg',
-        'https://i.meee.com.tw/EXRsLGY.png'
-      ],
+      imgs: [],
       visible: false,
-      index: 0 // default,
+      index: 0, // default,
+      movieId: '',
+      movieInfo: {}
     };
   },
   mounted() {
     this.change_yt();
+    this.getMovie();
+  },
+  watch: {
+    '$route.params': {
+      immediate: true,
+      handler() {
+        if (this.$route.params.id) {
+          this.getMovie();
+        }
+      }
+    }
   },
   methods: {
+    getMovie() {
+      this.movieId = this.$route.params.id;
+      const url = `${import.meta.env.VITE_API_URL}/movies/${this.movieId}`;
+      axios
+        .get(url)
+        .then((res) => {
+          console.log(res);
+          this.movieInfo = res.data;
+          this.vt_url = `https://www.youtube.com/watch?v=${res.data.videoId}`;
+          this.imgs = res.data.images;
+        })
+        .catch(() => {
+          Alert.toastTop('err', '載入失敗');
+        });
+    },
     showImg(index) {
       this.index = index;
       this.visible = true;
@@ -126,18 +150,6 @@ export default {
         }
       }
       this.ytlink = 'https://www.youtube.com/embed/' + this.videoID;
-    },
-    showSingle() {
-      this.imgs = 'https://i.meee.com.tw/EXRsLGY.png';
-      this.show();
-    },
-    showMultiple() {
-      this.imgs = ['https://i.meee.com.tw/EXRsLGY.png', 'https://i.meee.com.tw/sYEMq7G.jpg'];
-      this.index = 1; // index of imgList
-      this.show();
-    },
-    show() {
-      this.visible = true;
     },
     handleHide() {
       this.visible = false;
