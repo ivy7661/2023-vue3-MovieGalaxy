@@ -95,7 +95,7 @@ export default {
     };
   },
   mounted() {
-    this.change_yt();
+    // this.change_yt();
     this.getMovie();
   },
   watch: {
@@ -119,6 +119,8 @@ export default {
           this.movieInfo = res.data;
           this.vt_url = `https://www.youtube.com/watch?v=${res.data.videoId}`;
           this.imgs = res.data.images;
+          this.ytlink = `https://www.youtube.com/embed/${res.data.videoId}`;
+          this.change_yt();
         })
         .catch(() => {
           Alert.toastTop('err', '載入失敗');
