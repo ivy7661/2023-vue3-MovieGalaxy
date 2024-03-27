@@ -2,7 +2,7 @@
   <HeaderComponent />
   <!-- :userId="getUser?.id" -->
 
-  <main class="mainView">
+  <main class="container mainView">
     <RouterView></RouterView>
   </main>
   <!-- <Returntop-Btn></Returntop-Btn> -->

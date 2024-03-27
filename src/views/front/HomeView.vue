@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
-    <BannerSwiper class="d-none d-lg-block"></BannerSwiper>
-    <BannerMobile class="d-lg-none"></BannerMobile>
-    <PopularSwiper></PopularSwiper>
-    <TopDiscuss></TopDiscuss>
-    <ComingSoon></ComingSoon>
-  </div>
+  <BannerSwiper class="d-none d-lg-block"></BannerSwiper>
+  <BannerMobile class="d-lg-none"></BannerMobile>
+  <PopularSwiper></PopularSwiper>
+  <TopDiscuss></TopDiscuss>
+  <ComingSoon></ComingSoon>
 </template>
 
 <script>

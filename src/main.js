@@ -32,8 +32,8 @@ app.use(router);
 app.use(VueAxios, axios);
 
 app.component('VueLoading', Loading);
-app.component('VeeForm', Form);
-app.component('VeeField', Field);
+app.component('VForm', Form);
+app.component('VField', Field);
 app.component('ErrorMessage', ErrorMessage);
 
 app.mount('#app');

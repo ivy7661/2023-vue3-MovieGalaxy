@@ -1,4 +1,29 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "email": "ivyadmin@gmail.com",
+      "userName": "ivy",
+      "password": "k12345",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "john123@gmail.com",
+      "userName": "john",
+      "phone": "0912345678",
+      "password": "k12345",
+      "role": "user"
+    },
+    {
+      "email": "1231@gmail.com",
+      "password": "$2a$10$hMikCYSgp8RHHDruoOWYS.naOfD7XdVqDjouPV/ZG7UVnaP9WWBsG",
+      "userName": "11",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 3
+    }
+  ],
   "movies": [
     {
       "id": 1,
