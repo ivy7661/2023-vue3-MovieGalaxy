@@ -20,6 +20,10 @@ const router = createRouter({
           component: () => import('@/views/front/SignUp.vue')
         },
         {
+          path: 'search',
+          component: () => import('@/views/front/SearchMovie.vue')
+        },
+        {
           // movies/:id
           path: 'movieDetail',
           component: () => import('@/views/front/MovieDetail.vue')

@@ -7,20 +7,22 @@
       </div>
     </div>
     <div class="col-12 col-lg-6">
-      <div class="d-flex flex-column text-white align-items-center align-items-lg-start">
-        <h2 class="mb-2">奧本海默</h2>
-        <h2 class="text-uppercase">Oppenheimer</h2>
-        <div class="d-flex justify-content-start my-4">
-          <span v-for="i in 5" :key="i + 123" class="me-lg-1">
-            <img src="/icons/star_full.svg" alt="star-full" class="star" />
-          </span>
-          <!-- <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="me-lg-1">
-            <img src="/icons/star_empty.svg" alt="star-empty" class="star" />
-          </span> -->
+      <div class="d-flex flex-column text-white">
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <h2 class="mb-2">奧本海默</h2>
+          <h2 class="text-uppercase">Oppenheimer</h2>
+          <div class="d-flex justify-content-start my-4">
+            <span v-for="i in 5" :key="i + 123" class="me-lg-1">
+              <img src="/icons/star_full.svg" alt="star-full" class="star" />
+            </span>
+            <!-- <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="me-lg-1">
+              <img src="/icons/star_empty.svg" alt="star-empty" class="star" />
+            </span> -->
+          </div>
+          <button class="btn-view mb-8">
+            <div class="text-view">查看影評</div>
+          </button>
         </div>
-        <button class="btn-view mb-8">
-          <div class="text-view">查看影評</div>
-        </button>
         <p class="fw-bold">電影簡介:</p>
         <p class="movie-intro">
           美國科學家 J. 羅伯特·奧本海默的故事以及他在原子彈研發中所扮演的角色。
@@ -59,7 +61,7 @@
         <img src="/icons/masonry.svg" alt="masonry" width="25" height="25" class="pt-1" />
         <h3 class="ms-2 mb-5">劇照</h3>
       </div>
-      <!-- easy -->
+      <!-- Lightbox -->
       <div>
         <VueEasyLightbox
           :visible="visible"
@@ -68,10 +70,9 @@
           @hide="handleHide"
         ></VueEasyLightbox>
       </div>
-      <!-- v-for -->
-      <div class="d-flex flex-row justufy-content-center">
+      <div class="d-flex flex-column flex-lg-row justufy-content-center">
         <div v-for="(src, index) in imgs" :key="index" class="mx-auto" @click="showImg(index)">
-          <img :src="src" class="still mx-1" />
+          <img :src="src" class="still mx-1 mb-3" />
         </div>
       </div>
     </div>
@@ -156,9 +157,11 @@ export default {
   }
 }
 .poster {
-  max-width: 385px;
+  max-width: 350px;
+  height: 550px;
   @include mobile() {
     max-width: 250px;
+    height: 400px;
   }
 }
 .btn-view {
