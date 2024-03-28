@@ -52,6 +52,7 @@
             取消
           </button>
           <button type="button" class="btn btn-secondary" @click="addPost()">確認</button>
+          <!-- $emit('updateArticle', editArticle) -->
         </div>
       </div>
     </div>
@@ -76,7 +77,8 @@ export default {
       userName: '',
       title: '',
       content: '',
-      is_spoiled: false
+      is_spoiled: false,
+      userId: ''
     };
   },
   mounted() {},
@@ -89,19 +91,27 @@ export default {
   methods: {
     // userId: ''
     addPost() {
+      this.userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+
       const url = `${import.meta.env.VITE_API_URL}/posts`;
       const postData = {
         userName: this.userName,
         title: this.title,
         content: this.content,
         is_spoiled: false,
-        movieId: this.tempMovie.id
+        movieId: this.tempMovie.id,
+        userId: this.userId
       };
 
       axios
         .post(url, postData)
         .then((res) => {
           console.log(res);
+          this.userName = '';
+          this.title = '';
+          this.content = '';
+          this.closeModal();
+          this.$emit('get-posts');
         })
         .catch((err) => {
           console.log(err);

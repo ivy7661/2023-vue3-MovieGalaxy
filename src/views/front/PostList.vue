@@ -51,9 +51,7 @@
                   <div class="post-card px-4 py-5 mb-5">
                     <h5>{{ post.title }}</h5>
                     <p>{{ post.userName }}</p>
-                    <p class="post-content">
-                      {{ post.content }}
-                    </p>
+                    <p v-html="post.content" class="post-content"></p>
                   </div>
                 </template>
               </div>
@@ -68,9 +66,7 @@
                     <!-- card -->
                     <h5>{{ post.title }}</h5>
                     <p>{{ post.userName }}</p>
-                    <p class="post-content">
-                      {{ post.content }}
-                    </p>
+                    <p v-html="post.content" class="post-content"></p>
                   </div>
                 </template>
               </div>
@@ -85,7 +81,7 @@
       </template>
     </div>
   </section>
-  <addpost-Modal ref="addPostModal" :tempMovie="movie"></addpost-Modal>
+  <addpost-Modal ref="addPostModal" :temp-movie="movie" @get-posts="getPosts"></addpost-Modal>
 </template>
 
 <script>
