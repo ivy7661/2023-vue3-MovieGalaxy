@@ -18,9 +18,11 @@
               <img src="/icons/star_empty.svg" alt="star-empty" class="star" />
             </span>
           </div>
-          <button class="btn-view mb-8">
-            <div class="text-view">查看影評</div>
-          </button>
+          <router-link :to="`posts/${movieInfo.id}`">
+            <button class="btn-view mb-8">
+              <div class="text-view">查看影評</div>
+            </button>
+          </router-link>
         </div>
         <p class="fw-bold">電影簡介:</p>
         <p class="movie-intro">
