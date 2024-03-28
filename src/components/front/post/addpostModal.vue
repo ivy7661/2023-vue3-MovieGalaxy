@@ -89,11 +89,14 @@ export default {
   },
   mixins: [modalMixin],
   methods: {
-    // userId: ''
     addPost() {
       this.userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+      const token = document.cookie.replace(
+        /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
+        '$1'
+      );
 
-      const url = `${import.meta.env.VITE_API_URL}/posts`;
+      const url = `${import.meta.env.VITE_API_URL}/600/posts`;
       const postData = {
         userName: this.userName,
         title: this.title,
@@ -104,7 +107,11 @@ export default {
       };
 
       axios
-        .post(url, postData)
+        .post(url, postData, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then((res) => {
           console.log(res);
           this.userName = '';

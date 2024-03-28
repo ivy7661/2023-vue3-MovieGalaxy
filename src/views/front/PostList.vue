@@ -86,13 +86,15 @@
 
 <script>
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import addpostModal from '@/components/front/post/addpostModal.vue';
 export default {
   data() {
     return {
       movieId: '',
       movie: {},
-      posts: []
+      posts: [],
+      userId: ''
     };
   },
   components: {
@@ -100,6 +102,8 @@ export default {
   },
   mounted() {
     this.getPosts();
+    const userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+    this.userId = userId;
   },
   watch: {
     '$route.params': {
@@ -128,6 +132,14 @@ export default {
         });
     },
     openModal() {
+      if (!this.userId) {
+        Swal.fire({
+          position: 'center',
+          icon: 'warning',
+          title: '請先登入會員'
+        });
+        return;
+      }
       this.tempPost = {};
       this.$refs.addPostModal.openModal();
     }
