@@ -33,7 +33,7 @@
         <button
           type="button"
           class="d-flex text-white btn-post ms-auto me-2 me-lg-7"
-          @click="openModal"
+          @click="openAddModal"
         >
           <div class="d-none d-lg-block addPost me-3">我要評論</div>
           <i class="bi bi-pencil-square fs-5"></i>
@@ -48,10 +48,19 @@
               <div class="row d-flex flex-column align-items-center">
                 <template v-for="post in posts" :key="post.id">
                   <!-- card -->
+                  <!-- @click="openDetailModal" -->
                   <div class="post-card px-4 py-5 mb-5">
                     <h5>{{ post.title }}</h5>
                     <p>{{ post.userName }}</p>
                     <p v-html="post.content" class="post-content"></p>
+                    <button
+                      type="button"
+                      class="ms-auto d-flex flex-row justify-content-center align-items-center open-detail"
+                      @click="openDetailModal"
+                    >
+                      <div class="text-open">展開影評</div>
+                      <i class="bi bi-chevron-down text-white fs-6 ms-3"></i>
+                    </button>
                   </div>
                 </template>
               </div>
@@ -67,6 +76,14 @@
                     <h5>{{ post.title }}</h5>
                     <p>{{ post.userName }}</p>
                     <p v-html="post.content" class="post-content"></p>
+                    <button
+                      type="button"
+                      class="ms-auto d-flex flex-row justify-content-center align-items-center open-detail"
+                      @click="openDetailModal"
+                    >
+                      <div class="text-open">展開影評</div>
+                      <i class="bi bi-chevron-down text-white fs-6 ms-3"></i>
+                    </button>
                   </div>
                 </template>
               </div>
@@ -81,13 +98,15 @@
       </template>
     </div>
   </section>
-  <addpost-Modal ref="addPostModal" :temp-movie="movie" @get-posts="getPosts"></addpost-Modal>
+  <Addpost-Modal ref="addPostModal" :temp-movie="movie" @get-posts="getPosts"></Addpost-Modal>
+  <Post-Detail ref="postDetailModal"></Post-Detail>
 </template>
 
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import addpostModal from '@/components/front/post/addpostModal.vue';
+import AddpostModal from '@/components/front/post/AddpostModal.vue';
+import PostDetail from '@/components/front/post/PostDetail.vue';
 export default {
   data() {
     return {
@@ -98,7 +117,8 @@ export default {
     };
   },
   components: {
-    addpostModal
+    AddpostModal,
+    PostDetail
   },
   mounted() {
     this.getPosts();
@@ -131,7 +151,7 @@ export default {
           console.log(err);
         });
     },
-    openModal() {
+    openAddModal() {
       if (!this.userId) {
         Swal.fire({
           position: 'center',
@@ -142,6 +162,10 @@ export default {
       }
       this.tempPost = {};
       this.$refs.addPostModal.openModal();
+    },
+    openDetailModal() {
+      this.tempPost = {};
+      this.$refs.postDetailModal.openModal();
     }
   }
 };
@@ -171,8 +195,9 @@ export default {
   border-image: linear-gradient(to right, #a880c8, #966eb5) 1;
 }
 .post-card {
+  position: relative;
   width: 1000px;
-  height: 230px;
+  height: 260px;
   border-radius: 20px;
   background: linear-gradient(115deg, rgba(91, 79, 124, 0.49) 0%, rgba(57, 30, 54, 0.5) 100.56%);
   box-shadow:
@@ -205,5 +230,23 @@ export default {
   @include Inter;
   font-size: 20px;
   font-weight: 700;
+}
+.open-detail {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #b3b6f2;
+  background: linear-gradient(115deg, #8673d4 0%, #8f268b 100.56%);
+  box-shadow: 9px 5px 10px 0px rgba(110, 62, 147, 0.25);
+}
+.text-open {
+  @include Inter;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
 }
 </style>

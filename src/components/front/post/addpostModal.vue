@@ -52,7 +52,6 @@
             取消
           </button>
           <button type="button" class="btn btn-secondary" @click="addPost()">確認</button>
-          <!-- $emit('updateArticle', editArticle) -->
         </div>
       </div>
     </div>
