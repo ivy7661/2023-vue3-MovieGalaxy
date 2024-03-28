@@ -10,7 +10,7 @@
     {
       "email": "123@gmail.com",
       "password": "$2a$10$B5yQh81Jx.S4k7r9NWnLPuSuJ0GNOJsucXNrIHM4jNawAB2WE95lS",
-      "userName": "11",
+      "userName": "James Lin",
       "phone": "0912345678",
       "role": "user",
       "id": 2
@@ -250,6 +250,44 @@
       "is_hot": 1,
       "is_coming": 1,
       "on_banner": 1
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "userId": 2,
+      "userName": "James Lin",
+      "title": "科學與道德的交織",
+      "content": "影片不僅探討了科學家在戰爭時期所承受的壓力，也提出了深刻的道德問題。奧本海默的故事讓觀眾思考科學與道德之間的平衡，以及科技發展對世界的影響。同時也反映出在困難時刻，個人的信仰和價值觀會如何影響重大決定。總的來說，《Oppenheimer》是一部富有挑戰性和啟發性的電影，讓觀眾不僅了解科學的奇妙，也思考人類的道德責任。這部電影將深深觸動觀眾的內心，值得一看。",
+      "is_spoiled": false
+    },
+    {
+      "id": 2,
+      "movieId": 2,
+      "userId": 2,
+      "userName": "Eric Chang",
+      "title": "上映心得",
+      "content": "這部好看",
+      "is_spoiled": false
+    },
+    {
+      "id": 3,
+      "movieId": 1,
+      "userId": 2,
+      "userName": "Jessica Wang",
+      "title": "來暴雷",
+      "content": "我是劇透",
+      "is_spoiled": true
+    },
+    {
+      "id": 4,
+      "movieId": 2,
+      "userId": 2,
+      "userName": "Tom Yang",
+      "title": "小丑",
+      "content": "最喜歡的反派",
+      "is_spoiled": true
     }
   ]
 }
