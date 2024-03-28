@@ -3,32 +3,42 @@
     <h1 class="mx-2">{{ movie.name }} {{ movie.englishName }}</h1>
     <div>
       <!-- nav-tabs-->
-      <ul class="nav mb-5" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link active fs-5 px-1 mx-2"
-            id="all-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#all"
-            href="#"
-            role="tab"
-          >
-            所有影評
-          </a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link fs-5 px-1 mx-2"
-            id="noSpoiler-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#noSpoiler"
-            href="#"
-            role="tab"
-          >
-            無雷影評
-          </a>
-        </li>
-      </ul>
+      <div class="d-flex">
+        <ul class="nav mb-5" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active fs-5 px-1 mx-2"
+              id="all-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#all"
+              href="#"
+              role="tab"
+            >
+              所有影評
+            </a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link fs-5 px-1 mx-2"
+              id="noSpoiler-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#noSpoiler"
+              href="#"
+              role="tab"
+            >
+              無雷影評
+            </a>
+          </li>
+        </ul>
+        <button
+          type="button"
+          class="d-flex text-white btn-post ms-auto me-2 me-lg-7"
+          @click="openModal"
+        >
+          <div class="d-none d-lg-block addPost me-3">我要評論</div>
+          <i class="bi bi-pencil-square fs-5"></i>
+        </button>
+      </div>
       <!-- nav-tabs-content-->
       <template v-if="posts.length">
         <div class="tab-content" id="myTabContent">
@@ -75,10 +85,12 @@
       </template>
     </div>
   </section>
+  <addpost-Modal ref="addPostModal" :tempMovie="movie"></addpost-Modal>
 </template>
 
 <script>
 import axios from 'axios';
+import addpostModal from '@/components/front/post/addpostModal.vue';
 export default {
   data() {
     return {
@@ -86,6 +98,9 @@ export default {
       movie: {},
       posts: []
     };
+  },
+  components: {
+    addpostModal
   },
   mounted() {
     this.getPosts();
@@ -101,7 +116,6 @@ export default {
     }
   },
   methods: {
-    // 傳入電影id篩出含有這部電影id的post
     getPosts() {
       this.movieId = this.$route.params.id;
 
@@ -116,6 +130,10 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+    openModal() {
+      this.tempPost = {};
+      this.$refs.addPostModal.openModal();
     }
   }
 };
@@ -163,5 +181,21 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+.btn-post {
+  max-width: 200px;
+  height: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #b3b6f2;
+  background: linear-gradient(115deg, #8673d4 0%, #8f268b 100.56%);
+  box-shadow: 9px 5px 10px 0px rgba(110, 62, 147, 0.25);
+}
+.addPost {
+  @include Inter;
+  font-size: 20px;
+  font-weight: 700;
 }
 </style>
