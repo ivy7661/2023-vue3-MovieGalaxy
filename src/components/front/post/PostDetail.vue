@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <pre>{{}}</pre>
+          <h2>{{ tempPost.title }}</h2>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -23,6 +23,7 @@
 <script>
 import modalMixin from '@/utils/modalMixin.js';
 export default {
+  props: ['tempPost'],
   data() {},
   mixins: [modalMixin]
 };
