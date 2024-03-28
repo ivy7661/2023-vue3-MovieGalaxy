@@ -12,6 +12,7 @@ import { localize, setLocale } from '@vee-validate/i18n';
 import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json';
 
 import VueEasyLightbox from 'vue-easy-lightbox';
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 import App from './App.vue';
 import router from './router';
@@ -33,6 +34,7 @@ app.use(createPinia());
 app.use(router);
 app.use(VueAxios, axios);
 app.use(VueEasyLightbox);
+app.use(CKEditor);
 
 app.component('VueLoading', Loading);
 app.component('VForm', Form);
