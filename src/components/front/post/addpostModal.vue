@@ -1,0 +1,133 @@
+<template>
+  <div id="addPostModal" ref="modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-xl post-modal">
+      <div class="modal-content border-0">
+        <div class="modal-header bg-dark text-white">
+          <h5 id="addPostModalLabel" class="text-white modal-title">
+            電影名稱：{{ tempMovie.name }}
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <pre>{{}}</pre>
+          <div class="mb-3 col-md-6">
+            <label for="userName" class="form-label">發文者</label>
+            <input
+              id="userName"
+              v-model="userName"
+              type="text"
+              class="form-control"
+              placeholder="請輸入發文者名稱"
+            />
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="title" class="form-label">標題</label>
+            <input
+              id="title"
+              v-model="title"
+              type="text"
+              class="form-control"
+              placeholder="請輸入標題"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="content" class="form-label">影評內文</label>
+            <ckeditor :editor="editor" :config="editorConfig" v-model="content"></ckeditor>
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                id="is_spoiled"
+                v-model="is_spoiled"
+                class="form-check-input"
+                type="checkbox"
+              />
+              <label class="form-check-label" for="is_spoiled">內容涉及劇透</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            取消
+          </button>
+          <button type="button" class="btn btn-secondary" @click="addPost()">確認</button>
+          <!-- $emit('updateArticle', editArticle) -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+import modalMixin from '@/utils/modalMixin.js';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+// 送出影評的按鈕，記得要用emit觸發再渲染父元件一次，讓新影評也出現
+export default {
+  props: ['tempMovie'],
+  data() {
+    return {
+      editor: ClassicEditor,
+      editorConfig: {
+        toolbar: ['heading', '|', 'bold', 'italic', 'link']
+      },
+      editMovieId: '',
+      userName: '',
+      title: '',
+      content: '',
+      is_spoiled: false,
+      userId: ''
+    };
+  },
+  mounted() {},
+  watch: {
+    tempArticle() {
+      this.editMovieId = this.tempMovie.id;
+    }
+  },
+  mixins: [modalMixin],
+  methods: {
+    // userId: ''
+    addPost() {
+      this.userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+
+      const url = `${import.meta.env.VITE_API_URL}/posts`;
+      const postData = {
+        userName: this.userName,
+        title: this.title,
+        content: this.content,
+        is_spoiled: false,
+        movieId: this.tempMovie.id,
+        userId: this.userId
+      };
+
+      axios
+        .post(url, postData)
+        .then((res) => {
+          console.log(res);
+          this.userName = '';
+          this.title = '';
+          this.content = '';
+          this.closeModal();
+          this.$emit('get-posts');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.post-modal {
+  border-radius: 20px;
+  background: linear-gradient(115deg, #5b4f7c 0%, #391e36 100.56%);
+  box-shadow:
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3),
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset;
+}
+</style>
