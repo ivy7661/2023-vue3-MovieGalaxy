@@ -1,10 +1,8 @@
 <template>
-  <!-- 思路 -->
-  <!-- v-if=filter關鍵字 && selected value===movie.type -->
-
   <!-- 搜尋框 -->
   <div class="row justify-content-center my-3">
-    <div class="col-md-6 d-flex flex-row">
+    <div class="col-md-6 d-flex flex-row align-items-center">
+      <img src="/icons/search.svg" alt="search" height="30" class="me-3" />
       <input
         class="form-control me-2 searchInput"
         type="search"
@@ -21,8 +19,6 @@
   </div>
   <!-- 搜尋結果 -->
   <div v-for="movie in filterMovies" :key="movie.id">
-    <!-- v-if="movie.type === selected" -->
-
     <div class="d-flex justify-content-center align-items-center my-5">
       <router-link :to="`movies/${movie.id}`">
         <div class="movie-card d-flex flex-column flex-lg-row text-white px-4 py-5">
