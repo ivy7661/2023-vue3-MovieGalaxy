@@ -1,0 +1,1 @@
+import{l as e,j as t}from"./index-D-S2ymT6.js";var s={VITE_API_URL:"http://localhost:3001",BASE_URL:"./",MODE:"production",DEV:!1,PROD:!0,SSR:!1};const{VITE_API_URL:i}=s,m=e("movieStore",{state:()=>({movies:[]}),actions:{getMovies(){t.get(`${i}/movies`).then(o=>{this.movies=o.data,console.log(this.movies)}).catch(o=>{console.log(o)})}}});export{m};
