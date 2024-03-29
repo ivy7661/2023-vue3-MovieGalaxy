@@ -3,14 +3,11 @@
     <div class="modal-dialog modal-lg post-modal">
       <div class="modal-content border-0">
         <div class="modal-header bg-dark text-white">
-          <h5 id="addPostModalLabel" class="text-white modal-title">
-            電影名稱：{{ tempMovie.name }}
-          </h5>
+          <h5 id="addPostModalLabel" class="text-white modal-title">我的影評</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body px-6 py-4">
+        <div class="modal-body px-6 py-4 text-dark">
           <h2>{{ tempPost.title }}</h2>
-          <h5>{{ tempPost.userName }}</h5>
           <p>{{ tempPost.content }}</p>
         </div>
         <div class="modal-footer px-3">
@@ -26,7 +23,7 @@
 <script>
 import modalMixin from '@/utils/modalMixin.js';
 export default {
-  props: ['tempMovie', 'tempPost'],
+  props: ['tempPost'],
   data() {},
   mixins: [modalMixin]
 };

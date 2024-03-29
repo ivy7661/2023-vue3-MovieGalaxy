@@ -1,13 +1,13 @@
 <template>
   <section class="text-white">
-    <h1 class="mx-2">{{ movie.name }} {{ movie.englishName }}</h1>
+    <h1 class="mx-2 mb-3 movie-title">{{ movie.name }} {{ movie.englishName }}</h1>
     <div>
       <!-- nav-tabs-->
       <div class="d-flex">
         <ul class="nav mb-5" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <a
-              class="nav-link active fs-5 px-1 mx-2"
+              class="nav-link active px-1 mx-2"
               id="all-tab"
               data-bs-toggle="tab"
               data-bs-target="#all"
@@ -19,7 +19,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <a
-              class="nav-link fs-5 px-1 mx-2"
+              class="nav-link px-1 mx-2"
               id="noSpoiler-tab"
               data-bs-toggle="tab"
               data-bs-target="#noSpoiler"
@@ -32,7 +32,7 @@
         </ul>
         <button
           type="button"
-          class="d-flex text-white btn-post ms-auto me-2 me-lg-7"
+          class="d-flex text-white btn-post ms-auto me-2 me-lg-4"
           @click="openAddModal"
         >
           <div class="d-none d-lg-block addPost me-3">我要評論</div>
@@ -48,7 +48,6 @@
               <div class="row d-flex flex-column align-items-center">
                 <template v-for="post in posts" :key="post.id">
                   <!-- card -->
-                  <!-- @click="openDetailModal" -->
                   <div class="post-card px-4 py-5 mb-5">
                     <h5>{{ post.title }}</h5>
                     <p>{{ post.userName }}</p>
@@ -99,7 +98,7 @@
     </div>
   </section>
   <Addpost-Modal ref="addPostModal" :temp-movie="movie" @get-posts="getPosts"></Addpost-Modal>
-  <Post-Detail ref="postDetailModal" :temp-post="tempPost"></Post-Detail>
+  <Post-Detail ref="postDetailModal" :temp-movie="movie" :temp-post="tempPost"></Post-Detail>
 </template>
 
 <script>
@@ -176,7 +175,7 @@ export default {
 .nav-link {
   @include Inter;
   color: #fff;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   border-bottom: 3px solid transparent;
   &:hover {
@@ -249,5 +248,10 @@ export default {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
+}
+.movie-title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 45px;
 }
 </style>
