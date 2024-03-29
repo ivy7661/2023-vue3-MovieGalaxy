@@ -48,9 +48,15 @@ export default {
 
 <style lang="scss" scoped>
 .info-container {
-  border-radius: 20px;
-  border: 2px solid #dfdff1;
-  background: linear-gradient(115deg, rgba(161, 118, 182, 0.5) 0%, rgba(57, 30, 54, 0.5) 100.56%);
+  border-radius: 30px;
+  border: 3px solid var(--boder_color, #dfdff1);
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(205, 203, 203, 0.25) 50.28%,
+    rgba(249, 198, 244, 0.2) 100.56%
+  );
+  box-shadow: 9px 14px 29px 0px rgba(167, 122, 202, 0.25);
 }
 h5 {
   color: #fff;

@@ -2,14 +2,13 @@
   <!-- 搜尋框 -->
   <div class="row justify-content-center my-3">
     <div class="col-md-6 d-flex flex-row align-items-center">
-      <img src="/icons/search.svg" alt="search" height="30" class="me-3" />
+      <img src="/icons/search.svg" alt="search" height="25" class="" />
       <input
-        class="form-control me-2 searchInput"
+        class="form-control mx-3 text-white search-input"
         type="search"
-        placeholder="Search"
         v-model.lazy.trim="keyWord"
       />
-      <select v-model="selected">
+      <select v-model="selected" class="dropdown text-white px-3 py-2 fs-6">
         <option value="">全部</option>
         <option value="劇情片">劇情片</option>
         <option value="動作片">動作片</option>
@@ -109,5 +108,23 @@ export default {
 }
 .poster {
   width: 180px;
+}
+.search-input {
+  border-radius: 10px;
+  border: 1px solid #98c1fe;
+  background: transparent;
+}
+.dropdown {
+  width: 115px;
+  border-radius: 5px;
+  border: 1px solid #bdd8ff;
+  background: transparent;
+}
+select option {
+  border-radius: 5px;
+  border: 1px solid #bdd8ff;
+  background: #404b53;
+  padding: 10px;
+  line-height: 2;
 }
 </style>
