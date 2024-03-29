@@ -1,6 +1,6 @@
 <template>
   <div id="addPostModal" ref="modal" class="modal fade" tabindex="-1">
-    <div class="modal-dialog modal-xl post-modal">
+    <div class="modal-dialog modal-lg post-modal">
       <div class="modal-content border-0">
         <div class="modal-header bg-dark text-white">
           <h5 id="addPostModalLabel" class="text-white modal-title">
@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body">
           <pre>{{}}</pre>
-          <div class="mb-3 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="userName" class="form-label">發文者</label>
             <input
               id="userName"
@@ -18,9 +18,10 @@
               type="text"
               class="form-control"
               placeholder="請輸入發文者名稱"
+              required
             />
           </div>
-          <div class="mb-3 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="title" class="form-label">標題</label>
             <input
               id="title"
@@ -31,7 +32,7 @@
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-4">
             <label for="content" class="form-label">影評內文</label>
             <ckeditor :editor="editor" :config="editorConfig" v-model="content"></ckeditor>
           </div>
@@ -51,8 +52,7 @@
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
             取消
           </button>
-          <button type="button" class="btn btn-secondary" @click="addPost()">確認</button>
-          <!-- $emit('updateArticle', editArticle) -->
+          <button type="button" class="btn btn-secondary" @click="addPost()">發布影評</button>
         </div>
       </div>
     </div>
@@ -63,6 +63,7 @@
 import axios from 'axios';
 import modalMixin from '@/utils/modalMixin.js';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Swal from 'sweetalert2';
 
 // 送出影評的按鈕，記得要用emit觸發再渲染父元件一次，讓新影評也出現
 export default {
@@ -89,11 +90,14 @@ export default {
   },
   mixins: [modalMixin],
   methods: {
-    // userId: ''
     addPost() {
       this.userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+      const token = document.cookie.replace(
+        /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
+        '$1'
+      );
 
-      const url = `${import.meta.env.VITE_API_URL}/posts`;
+      const url = `${import.meta.env.VITE_API_URL}/600/posts`;
       const postData = {
         userName: this.userName,
         title: this.title,
@@ -104,7 +108,11 @@ export default {
       };
 
       axios
-        .post(url, postData)
+        .post(url, postData, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then((res) => {
           console.log(res);
           this.userName = '';
@@ -115,6 +123,13 @@ export default {
         })
         .catch((err) => {
           console.log(err);
+          Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: '登入時效逾期，請重新登入'
+          });
+          this.closeModal();
+          this.$router.push('/login');
         });
     }
   }

@@ -19,5 +19,17 @@ export default defineStore('userStore', {
     };
 
     // this.reGetAllData();
+  },
+  getUserCookie() {
+    const userToken = document.cookie.replace(
+      /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
+      '$1'
+    );
+    const userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+
+    return {
+      userToken: userToken || null,
+      userId: parseInt(userId, 10) || null
+    };
   }
 });

@@ -28,9 +28,22 @@ const router = createRouter({
           component: () => import('@/views/front/MovieDetail.vue')
         },
         {
-          // posts/:id
           path: 'movies/posts/:id',
           component: () => import('@/views/front/PostList.vue')
+        },
+        {
+          path: 'user',
+          component: () => import('@/views/front/UserView.vue'),
+          children: [
+            {
+              path: 'userInfo',
+              component: () => import('@/views/front/UserInfo.vue')
+            },
+            {
+              path: 'userPost',
+              component: () => import('@/views/front/UserPost.vue')
+            }
+          ]
         }
       ]
     }

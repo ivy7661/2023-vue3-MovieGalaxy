@@ -7,9 +7,9 @@
       <div class="d-flex align-items-center">
         <!-- 手機  icon-->
         <div class="d-lg-none">
-          <RouterLink class="navbar-brand position-relative" to="">
-            <i class="bi bi-person-fill fs-2 ms-4 me-2 text-white"></i>
-          </RouterLink>
+          <button type="button" class="navbar-brand position-relative" @click="memberArea">
+            <i class="bi bi-person-fill fs-3 mx-2 text-white"></i>
+          </button>
         </div>
         <!--漢堡-->
         <button
@@ -46,19 +46,38 @@
         </ul>
       </div>
       <!-- 桌機版  icon -->
-      <div class="d-flex justify-content-lg-end d-none d-lg-block">
-        <RouterLink class="navbar-brand position-relative" to="">
-          <i class="bi bi-person-fill fs-3 ms-4 me-2 text-white"></i>
-        </RouterLink>
+      <div class="d-flex justify-content-lg-end d-none d-lg-block ms-2">
+        <button type="button" class="navbar-brand position-relative" @click="memberArea">
+          <i class="bi bi-person-fill fs-3 mx-2 text-white"></i>
+        </button>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 export default {
   data() {
-    return {};
+    return {
+      userId: ''
+    };
+  },
+  mounted() {},
+  methods: {
+    memberArea() {
+      const userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
+      this.userId = userId;
+      if (!this.userId) {
+        Swal.fire({
+          position: 'center',
+          icon: 'warning',
+          title: '請先登入會員'
+        });
+        return;
+      }
+      this.$router.push('/user/userInfo');
+    }
   }
 };
 </script>
@@ -77,5 +96,9 @@ export default {
   @include mobile() {
     width: 85px;
   }
+}
+.navbar-brand {
+  background: transparent;
+  border: none;
 }
 </style>
