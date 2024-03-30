@@ -14,14 +14,6 @@
       "phone": "0912345678",
       "role": "user",
       "id": 2
-    },
-    {
-      "email": "2@gmail.com",
-      "password": "$2a$10$Da2urBc4Wu4Bb2g3N/hznewROyLrP3/e3ORRM.3xZUEmcDWyNewdK",
-      "userName": "Belly Tsai",
-      "phone": "0912345678",
-      "role": "user",
-      "id": 3
     }
   ],
   "movies": [
