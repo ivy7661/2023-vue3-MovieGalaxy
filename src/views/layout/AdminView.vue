@@ -27,7 +27,7 @@
       </div>
       <div class="col-10 py-3">
         <div class="">
-          <img src="/images/admin_logo.svg" alt="logo" class="img-fluid mb-6 px-2" width="220" />
+          <img src="/images/admin_logo.svg" alt="logo" class="img-fluid mb-3 px-2" width="220" />
         </div>
         <!-- v-if="checkSuccess" -->
         <RouterView></RouterView>
