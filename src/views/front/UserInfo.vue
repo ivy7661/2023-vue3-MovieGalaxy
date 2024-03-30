@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mb-5">
     <div class="col-10 col-md-9">
       <div class="d-flex justify-content-center align-items-center mb-3">
         <i class="bi bi-person-fill fs-2"></i>

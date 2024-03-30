@@ -4,7 +4,7 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-3">
           <a href="#">
-            <img src="/images/LOGO.svg" class="img-fluid" alt="logo" width="180" />
+            <img src="/images/LOGO.svg" class="img-fluid" alt="logo" width="150" />
           </a>
         </div>
         <!-- ms-lg-5 -->
@@ -13,8 +13,8 @@
             <div class="col-3">
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/mail.svg" alt="mail" style="width: 20px; height: 20px" />
-                <h6 class="text-light my-2">聯絡我們 E-MAIL</h6>
-                <p class="text-secondary my-2">moviegalaxy@Anythings</p>
+                <h6 class="text-light mt-2 mb-1">聯絡我們 E-MAIL</h6>
+                <p class="mb-1">moviegalaxy@Anythings</p>
                 <h6 class="text-light my-2">服務時間 14~18</h6>
               </div>
             </div>
@@ -22,16 +22,16 @@
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/language.svg" alt="aboutUs" style="width: 20px; height: 20px" />
                 <h6 class="text-light my-2">關於影評星塵</h6>
-                <p class="text-secondary my-2">Q & A</p>
-                <p class="text-secondary my-2">網站理念</p>
+                <p class="mb-1">Q & A</p>
+                <p class="mb-1">網站理念</p>
               </div>
             </div>
             <div class="col-3">
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/chat.svg" alt="chat" style="width: 20px; height: 20px" />
                 <h6 class="text-light my-2">平台規則</h6>
-                <p class="text-secondary my-2">用戶規章</p>
-                <p class="text-secondary my-2">評論規章</p>
+                <p class="mb-1">用戶規章</p>
+                <p class="mb-1">評論規章</p>
               </div>
             </div>
           </div>
@@ -45,4 +45,8 @@
   </footer>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+p {
+  color: #c5c1c1;
+}
+</style>

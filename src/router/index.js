@@ -49,7 +49,21 @@ const router = createRouter({
     },
     {
       path: '/admin',
-      component: () => import('@/views/layout/AdminView.vue')
+      component: () => import('@/views/layout/AdminView.vue'),
+      children: [
+        {
+          path: 'accounts',
+          component: () => import('@/views/admin/AccountsAdmin.vue')
+        },
+        {
+          path: 'movies',
+          component: () => import('@/views/admin/MoviesAdmin.vue')
+        },
+        {
+          path: 'posts',
+          component: () => import('@/views/admin/PostsAdmin.vue')
+        }
+      ]
     }
   ],
   linkActiveClass: 'active',
