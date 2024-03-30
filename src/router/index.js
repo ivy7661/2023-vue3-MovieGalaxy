@@ -46,6 +46,10 @@ const router = createRouter({
           ]
         }
       ]
+    },
+    {
+      path: '/admin',
+      component: () => import('@/views/layout/AdminView.vue')
     }
   ],
   linkActiveClass: 'active',

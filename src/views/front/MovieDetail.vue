@@ -1,5 +1,5 @@
 <template>
-  <section class="d-flex flex-column flex-lg-row py-8">
+  <section class="d-flex flex-column flex-lg-row py-6">
     <div class="col-12 col-lg-5 justify-content-center me-lg-5 mb-5 mb-lg-0">
       <div class="d-flex justify-content-center">
         <img :src="movieInfo.image" alt="電影海報" class="poster" />

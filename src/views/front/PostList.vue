@@ -1,6 +1,6 @@
 <template>
   <section class="text-white">
-    <h1 class="mx-2 mb-3 movie-title">{{ movie.name }} {{ movie.englishName }}</h1>
+    <h2 class="mx-2 mb-3 movie-title">{{ movie.name }} {{ movie.englishName }}</h2>
     <div>
       <!-- nav-tabs-->
       <div class="d-flex">
