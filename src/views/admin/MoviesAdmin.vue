@@ -4,7 +4,7 @@
       <h2>電影管理</h2>
       <div class="text-end">
         <!-- @click="openModal('new')" -->
-        <button class="btn btn-main text-white" @click="openModal()">新增電影</button>
+        <button class="btn btn-main text-white" @click="openModal('new')">新增電影</button>
       </div>
       <div class="row">
         <table class="table mt-4 mx-2">
@@ -28,9 +28,21 @@
               <td class="text-center">
                 <div class="btn-group">
                   <!-- @click="openModal('edit', item)" -->
-                  <button type="button" class="btn btn-outline-blue btn-sm">編輯</button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-blue btn-sm"
+                    @click="openModal('edit', movie)"
+                  >
+                    編輯
+                  </button>
                   <!-- @click="openModal('delete', item)" -->
-                  <button type="button" class="btn btn-outline-danger btn-sm">刪除</button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger btn-sm"
+                    @click="openModal('delete', movie)"
+                  >
+                    刪除
+                  </button>
                 </div>
               </td>
             </tr>
@@ -39,21 +51,36 @@
       </div>
     </div>
   </div>
-  <Movie-Modal ref="MovieModal" :is-new="isNew"></Movie-Modal>
+  <Movie-Modal
+    ref="MovieModal"
+    :is-new="isNew"
+    :temp-movie="tempMovie"
+    @update-movie="updateMovie"
+  ></Movie-Modal>
+  <Del-Movie-Modal
+    ref="DelMovieModal"
+    :temp-movie="tempMovie"
+    @del-movie="delMovie"
+  ></Del-Movie-Modal>
 </template>
 
 <script>
+import axios from 'axios';
 import movieStore from '@/stores/movieStore.js';
 import MovieModal from '@/components/admin/MovieModal.vue';
+import DelMovieModal from '@/components/admin/DelMovieModal.vue';
 import { mapState, mapActions } from 'pinia';
+import Alert from '@/utils/swal.js';
 export default {
   data() {
     return {
-      isNew: false
+      isNew: false,
+      tempMovie: {}
     };
   },
   components: {
-    MovieModal
+    MovieModal,
+    DelMovieModal
   },
   mounted() {
     this.getMovies();
@@ -63,8 +90,58 @@ export default {
   },
   methods: {
     ...mapActions(movieStore, ['getMovies']),
-    openModal() {
-      this.$refs.MovieModal.openModal();
+    openModal(status, movie) {
+      if (status === 'new') {
+        this.tempMovie = {
+          images: [],
+          staff: {}
+        };
+        this.isNew = true;
+        this.$refs.MovieModal.openModal();
+      } else if (status === 'edit') {
+        this.tempMovie = { ...movie };
+        this.isNew = false;
+        this.$refs.MovieModal.openModal();
+      } else if (status === 'delete') {
+        this.tempMovie = { ...movie };
+        this.$refs.DelMovieModal.openModal();
+      }
+    },
+    updateMovie() {
+      let url = `${import.meta.env.VITE_API_URL}/movies`;
+      let http = 'post';
+
+      if (!this.isNew) {
+        url = `${import.meta.env.VITE_API_URL}/movies/${this.tempMovie.id}`;
+        http = 'put';
+      }
+
+      axios[http](url, this.tempMovie)
+        .then((res) => {
+          this.getMovies();
+          this.$refs.MovieModal.closeModal();
+          if (this.isNew === false) {
+            Alert.toastTop('success', '編輯成功');
+          } else {
+            Alert.toastTop('success', '新增成功');
+          }
+        })
+        .catch(() => {
+          Alert.toastTop('error', '編輯失敗');
+        });
+    },
+    delMovie() {
+      const url = `${import.meta.env.VITE_API_URL}/movies/${this.tempMovie.id}`;
+      axios
+        .delete(url)
+        .then((res) => {
+          this.$refs.DelMovieModal.closeModal();
+          this.getMovies();
+          Alert.toastTop('success', '刪除成功');
+        })
+        .catch(() => {
+          Alert.toastTop('error', '刪除失敗');
+        });
     }
   }
 };
