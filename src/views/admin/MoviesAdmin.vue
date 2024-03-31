@@ -3,7 +3,6 @@
     <div class="col-md-11">
       <h2>電影管理</h2>
       <div class="text-end">
-        <!-- @click="openModal('new')" -->
         <button class="btn btn-main text-white" @click="openModal('new')">新增電影</button>
       </div>
       <div class="row">
@@ -27,7 +26,6 @@
               </td>
               <td class="text-center">
                 <div class="btn-group">
-                  <!-- @click="openModal('edit', item)" -->
                   <button
                     type="button"
                     class="btn btn-outline-blue btn-sm"
@@ -35,7 +33,6 @@
                   >
                     編輯
                   </button>
-                  <!-- @click="openModal('delete', item)" -->
                   <button
                     type="button"
                     class="btn btn-outline-danger btn-sm"
@@ -120,7 +117,7 @@ export default {
         .then((res) => {
           this.getMovies();
           this.$refs.MovieModal.closeModal();
-          if (this.isNew === false) {
+          if (!this.isNew) {
             Alert.toastTop('success', '編輯成功');
           } else {
             Alert.toastTop('success', '新增成功');

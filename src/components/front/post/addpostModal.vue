@@ -52,7 +52,7 @@
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
             取消
           </button>
-          <button type="button" class="btn btn-secondary" @click="addPost()">發布影評</button>
+          <button type="button" class="btn btn-blue" @click="addPost()">發布影評</button>
         </div>
       </div>
     </div>
@@ -64,8 +64,8 @@ import axios from 'axios';
 import modalMixin from '@/utils/modalMixin.js';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Swal from 'sweetalert2';
+import Alert from '@/utils/swal.js';
 
-// 送出影評的按鈕，記得要用emit觸發再渲染父元件一次，讓新影評也出現
 export default {
   props: ['tempMovie'],
   data() {
@@ -114,15 +114,14 @@ export default {
           }
         })
         .then((res) => {
-          console.log(res);
+          Alert.toastTop('success', '發布成功');
           this.userName = '';
           this.title = '';
           this.content = '';
           this.closeModal();
           this.$emit('get-posts');
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
           Swal.fire({
             position: 'center',
             icon: 'warning',
