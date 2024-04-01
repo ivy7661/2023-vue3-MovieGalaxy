@@ -1,16 +1,17 @@
 <template>
   <footer class="footer p-4 pb-0 mb-0">
     <div class="container">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-3">
+      <div class="row align-items-center justify-content-center justify-content-lg-between">
+        <div
+          class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-start mb-4 mb-lg-0"
+        >
           <a href="#">
             <img src="/images/LOGO.svg" class="img-fluid" alt="logo" width="150" />
           </a>
         </div>
-        <!-- ms-lg-5 -->
-        <div class="col-7">
-          <div class="row justify-content-between align-items-center">
-            <div class="col-3">
+        <div class="col-12 col-lg-7">
+          <div class="row justify-content-center justify-content-lg-between align-items-center">
+            <div class="col-12 mb-3 mb-lg-0 col-lg-3">
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/mail.svg" alt="mail" style="width: 20px; height: 20px" />
                 <h6 class="text-light mt-2 mb-1">聯絡我們 E-MAIL</h6>
@@ -18,7 +19,7 @@
                 <h6 class="text-light my-2">服務時間 14~18</h6>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 mb-3 mb-lg-0 col-lg-3">
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/language.svg" alt="aboutUs" style="width: 20px; height: 20px" />
                 <h6 class="text-light my-2">關於影評星塵</h6>
@@ -26,7 +27,7 @@
                 <p class="mb-1">網站理念</p>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 mb-3 mb-lg-0 col-lg-3">
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/chat.svg" alt="chat" style="width: 20px; height: 20px" />
                 <h6 class="text-light my-2">平台規則</h6>

@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body px-6 py-4 text-dark">
           <h2>{{ tempPost.title }}</h2>
-          <p>{{ tempPost.content }}</p>
+          <p v-html="tempPost.content"></p>
         </div>
         <div class="modal-footer px-3">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">

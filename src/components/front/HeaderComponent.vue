@@ -17,6 +17,7 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarText"
+          @click="toggleNavbar"
         >
           <i class="bi bi-list fs-3 text-white" style="font-weight: bold"></i>
         </button>
@@ -85,6 +86,10 @@ export default {
       );
     });
   },
+  mounted() {
+    this.navbarCollapse();
+    // this.mobileClose();
+  },
   methods: {
     memberArea() {
       const userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
@@ -95,6 +100,7 @@ export default {
           icon: 'warning',
           title: '請先登入會員'
         });
+        this.$router.push('/login');
         return;
       }
       this.$router.push('/user/userInfo');
@@ -113,6 +119,24 @@ export default {
         /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
         '$1'
       );
+    },
+    navbarCollapse() {
+      const navLink = document.querySelectorAll('.nav-link');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+
+      navLink.forEach((item) => {
+        item.addEventListener('click', () => {
+          navbarCollapse.classList.remove('show');
+        });
+      });
+    },
+    toggleNavbar() {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+      } else {
+        navbarCollapse.classList.add('show');
+      }
     }
   }
 };

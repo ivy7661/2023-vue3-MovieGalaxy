@@ -31,7 +31,7 @@
               class="form-control"
               :class="{ 'is-invalid': errors['名稱'] }"
               placeholder="請輸入名稱"
-              rules="required|min:2|max:10"
+              rules="required|min:2|max:15"
               v-model="form.user.userName"
             ></VField>
             <ErrorMessage name="名稱" class="invalid-feedback"></ErrorMessage>
@@ -122,15 +122,14 @@ export default {
       axios
         .post(url, userData)
         .then((res) => {
-          console.log(res);
-          this.setUserCookie(res.data.user.id, res.data.accessToken);
-          // this.setUser(res.data.user);
+          this.setUserCookie(res.data.user.id, res.data.accessToken, res.data.user.role);
 
           Swal.fire({
             title: '註冊成功',
             text: `歡迎${res.data.user.userName}加入影評星塵會員！`,
             icon: 'success'
           });
+          this.$bus.emit('login-success');
           this.$router.push('/');
         })
         .catch((err) => {

@@ -28,10 +28,10 @@
           Max同步上映的計劃中產生了分歧，使得諾蘭宣佈不再與華納兄弟進行合作，因此本片成為諾蘭繼《跟蹤》（1998年）和《記憶拼圖》（2000年）後，第三部非.....
         </p>
         <button class="btn-carousel">
-          <a href="" class="btn-index-a"
+          <router-link to="/movies/1" class="btn-index-a"
             >read more <span class="ml-15"></span
             ><img src="/icons/PlayButton_purple.svg" alt="" class="mb-1 ms-1" />
-          </a>
+          </router-link>
         </button>
       </div>
     </div>
@@ -59,10 +59,10 @@
           Max同步上映的計劃中產生了分歧，使得諾蘭宣佈不再與華納兄弟進行合作，因此本片成為諾蘭繼《跟蹤》（1998年）和《記憶拼圖》（2000年）後，第三部非.....
         </p>
         <button class="btn-carousel">
-          <a href="" class="btn-index-a"
+          <router-link to="/movies/1" class="btn-index-a"
             >read more <span class="ml-15"></span
             ><img src="/icons/PlayButton_purple.svg" alt="" class="mb-1 ms-1" />
-          </a>
+          </router-link>
         </button>
       </div>
     </div>

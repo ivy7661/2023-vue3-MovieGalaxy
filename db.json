@@ -1,27 +1,68 @@
 {
   "users": [
     {
-      "id": 1,
       "email": "ivyadmin@gmail.com",
+      "password": "$2a$10$SRRoz8K4yd26VPs5y6u3sOtw4/0x/L5KJgEjVY0AR2AuzaKusfOru",
       "userName": "ivy",
-      "password": "k12345",
-      "role": "admin"
+      "phone": "0912345678",
+      "role": "admin",
+      "id": 1
     },
     {
-      "email": "123@gmail.com",
-      "password": "$2a$10$B5yQh81Jx.S4k7r9NWnLPuSuJ0GNOJsucXNrIHM4jNawAB2WE95lS",
-      "userName": "James Lin",
+      "email": "admin01@gmail.com",
+      "password": "$2a$10$DWh.AQsB1yLGnGiu5Q/.G.XamEHWuQay/khq8s2yI077m7FQz4hIm",
+      "userName": "admin01",
       "phone": "0912345678",
-      "role": "user",
+      "role": "admin",
       "id": 2
     },
     {
-      "email": "admin123@gmail.com",
-      "password": "$2a$10$sZZJYfW9CWCgPpBclHLdQuMG1v.H/.f1QVYfDaSfAjxgITCbQVI52",
-      "userName": "jack",
+      "email": "admin02@gmail.com",
+      "password": "$2a$10$rVSeOl4.k77KwnNd8VESA.9zzUHMfoGW8tDtvVi68QW478JBo5v/6",
+      "userName": "admin02",
       "phone": "0912345678",
       "role": "admin",
       "id": 3
+    },
+    {
+      "email": "james@gmail.com",
+      "password": "$2a$10$zanPWlGzY5xA6Ynvq.PoiuhHA9NejN5JuD6GM8at3zMZ6yg/fN4bm",
+      "userName": "James Lin",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "email": "belly@gmail.com",
+      "password": "$2a$10$Gwk0dJeB0ZrhE8SC6eQIROpiIU3OQ7pL6BnBGn8HEWzAeBv.HQOPS",
+      "userName": "Belly Tsai",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "email": "jason@gmail.com",
+      "password": "$2a$10$Z9ssH4Y4fnA38VV.LT8WjOgolUGIFiAentl/H2taLFMdix3uB3pvm",
+      "userName": "Jason Van",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "email": "eric@gmail.com",
+      "password": "$2a$10$bOoAIt2QtarlqNp60cX03u2/rGB5Og15D.bx5mt08R/lCrOy6mc7W",
+      "userName": "Eric Chang",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 7
+    },
+    {
+      "email": "jessica@gmail.com",
+      "password": "$2a$10$fW0Ygv8Ufo6yCMSa3zwrQ.ffpv3HPovWik672Bx0cpO5AYuFnpDe2",
+      "userName": "Jessica Wang",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 8
     }
   ],
   "movies": [
@@ -264,101 +305,47 @@
     {
       "id": 1,
       "movieId": 1,
-      "userId": 2,
+      "userId": 4,
       "userName": "James Lin",
       "title": "科學與道德的交織",
       "content": "影片不僅探討了科學家在戰爭時期所承受的壓力，也提出了深刻的道德問題。奧本海默的故事讓觀眾思考科學與道德之間的平衡，以及科技發展對世界的影響。同時也反映出在困難時刻，個人的信仰和價值觀會如何影響重大決定。總的來說，《Oppenheimer》是一部富有挑戰性和啟發性的電影，讓觀眾不僅了解科學的奇妙，也思考人類的道德責任。這部電影將深深觸動觀眾的內心，值得一看。",
       "is_spoiled": false
     },
     {
-      "id": 2,
-      "movieId": 2,
-      "userId": 2,
-      "userName": "Eric Chang",
-      "title": "上映心得",
-      "content": "這部好看",
-      "is_spoiled": false
-    },
-    {
-      "id": 3,
-      "movieId": 1,
-      "userId": 2,
-      "userName": "Jessica Wang",
-      "title": "來暴雷",
-      "content": "我是劇透",
-      "is_spoiled": true
-    },
-    {
-      "id": 4,
-      "movieId": 2,
-      "userId": 2,
-      "userName": "Tom Yang",
-      "title": "小丑",
-      "content": "最喜歡的反派",
-      "is_spoiled": true
-    },
-    {
-      "userName": "1",
-      "title": "1",
+      "userName": "",
+      "title": "test",
       "content": "",
       "is_spoiled": false,
       "movieId": 1,
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "userName": "new",
-      "title": "new",
-      "content": "",
-      "is_spoiled": false,
-      "movieId": 1,
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "userName": "222",
-      "title": "222",
-      "content": "",
-      "is_spoiled": false,
-      "movieId": 1,
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "userName": "www",
-      "title": "www",
-      "content": "",
-      "is_spoiled": false,
-      "movieId": 1,
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "userName": "11111",
-      "title": "1",
-      "content": "",
-      "is_spoiled": false,
-      "movieId": 1,
-      "userId": 2,
-      "id": 9
-    },
-    {
-      "userName": "Jason",
-      "title": "122111",
-      "content": "",
-      "is_spoiled": false,
-      "movieId": 1,
-      "userId": 2,
-      "id": 10
+      "userId": 1,
+      "id": 2
     },
     {
       "userName": "",
-      "title": "admin",
+      "title": "admin01",
       "content": "",
       "is_spoiled": false,
       "movieId": 1,
-      "userId": 3,
-      "id": 11
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "userName": "1",
+      "title": "好看！",
+      "content": "<p>讚</p>",
+      "is_spoiled": false,
+      "movieId": 4,
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "userName": "1",
+      "title": "推薦",
+      "content": "",
+      "is_spoiled": false,
+      "movieId": 4,
+      "userId": 4,
+      "id": 5
     }
   ]
 }
