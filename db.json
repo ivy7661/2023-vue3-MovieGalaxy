@@ -14,6 +14,14 @@
       "phone": "0912345678",
       "role": "user",
       "id": 2
+    },
+    {
+      "email": "admin123@gmail.com",
+      "password": "$2a$10$sZZJYfW9CWCgPpBclHLdQuMG1v.H/.f1QVYfDaSfAjxgITCbQVI52",
+      "userName": "jack",
+      "phone": "0912345678",
+      "role": "admin",
+      "id": 3
     }
   ],
   "movies": [
@@ -288,6 +296,42 @@
       "title": "小丑",
       "content": "最喜歡的反派",
       "is_spoiled": true
+    },
+    {
+      "userName": "1",
+      "title": "1",
+      "content": "",
+      "is_spoiled": false,
+      "movieId": 1,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "userName": "new",
+      "title": "new",
+      "content": "",
+      "is_spoiled": false,
+      "movieId": 1,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "userName": "222",
+      "title": "222",
+      "content": "",
+      "is_spoiled": false,
+      "movieId": 1,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "userName": "www",
+      "title": "www",
+      "content": "",
+      "is_spoiled": false,
+      "movieId": 1,
+      "userId": 2,
+      "id": 8
     }
   ]
 }

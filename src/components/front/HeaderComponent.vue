@@ -36,11 +36,19 @@
               >找電影</RouterLink
             >
           </li>
-          <li class="nav-item mb-2 mb-lg-0">
+          <li v-if="!this.userToken" class="nav-item mb-2 mb-lg-0">
             <RouterLink
               to="/login"
               class="nav-link d-inline-block text-white fw-bold fs-6 pt-3 mx-2"
               >註冊/登入</RouterLink
+            >
+          </li>
+          <li v-else class="nav-item mb-2 mb-lg-0">
+            <RouterLink
+              to="/login"
+              class="nav-link d-inline-block text-white fw-bold fs-6 pt-3 mx-2"
+              @click="logout"
+              >登出</RouterLink
             >
           </li>
         </ul>
@@ -60,10 +68,20 @@ import Swal from 'sweetalert2';
 export default {
   data() {
     return {
-      userId: ''
+      userId: '',
+      userToken: '',
+      newToken: ''
     };
   },
-  mounted() {},
+  mounted() {
+    this.$bus.on('login-success', () => {
+      // 登入成功後更新 userToken，這裡可以根據實際情況從 cookie 或其他地方獲取 userToken
+      this.userToken = document.cookie.replace(
+        /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
+        '$1'
+      );
+    });
+  },
   methods: {
     memberArea() {
       const userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
@@ -77,6 +95,22 @@ export default {
         return;
       }
       this.$router.push('/user/userInfo');
+    },
+    logout() {
+      document.cookie = `userToken=0; expires=${new Date('2000/1/1 12:00')};path=/`;
+      document.cookie = `userId=0; expires=${new Date('2000/1/1 12:00')};path=/`;
+      document.cookie = `role=''; expires=${new Date('2000/1/1 12:00')};path=/`;
+
+      Swal.fire({
+        icon: 'success',
+        title: '登出成功'
+      });
+      this.$router.replace('/login');
+      // this.userToken = null;
+      this.userToken = document.cookie.replace(
+        /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
+        '$1'
+      );
     }
   }
 };

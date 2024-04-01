@@ -33,7 +33,7 @@
 
 <script>
 import axios from 'axios';
-import { mapActions } from 'pinia';
+import { mapState, mapActions } from 'pinia';
 import userStore from '@/stores/userStore';
 import Alert from '@/utils/swal.js';
 
@@ -41,8 +41,12 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      userToken: ''
     };
+  },
+  computed: {
+    ...mapState(userStore, ['isLogin'])
   },
   methods: {
     ...mapActions(userStore, ['setUser', 'setUserCookie']),
@@ -59,11 +63,19 @@ export default {
           this.email = '';
           this.password = '';
           if (res.data.accessToken && res.data.user.role === 'user') {
-            this.setUserCookie(res.data.user.id, res.data.accessToken);
-            // this.setUser(res.data.user);
+            this.setUserCookie(res.data.user.id, res.data.accessToken, res.data.user.role);
+            this.$router.replace('/');
+            Alert.toastTop('success', '登入成功');
+            this.$bus.emit('login-success');
+            // setTimeout(() => {
+            //   location.reload();
+            // }, 800);
           }
-          Alert.toastTop('success', '登入成功');
-          this.$router.replace('/');
+          if (res.data.accessToken && res.data.user.role === 'admin') {
+            this.setUserCookie(res.data.user.id, res.data.accessToken, res.data.user.role);
+            this.$router.replace('/admin/accounts');
+            Alert.toastTop('success', '歡迎登入後台');
+          }
         })
         .catch((err) => {
           console.log(err);

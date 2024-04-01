@@ -3,22 +3,16 @@ import { addDays } from '@/utils/helpers';
 
 export default defineStore('userStore', {
   state: () => ({
-    user: null
+    user: null,
+    isLogin: false
   }),
   actions: {
-    setUserCookie(userId, token) {
+    setUserCookie(userId, token, role) {
       const getDateTime = addDays(new Date(), 2);
       document.cookie = `userToken=${token}; expires=${new Date(getDateTime)}; path=/`;
       document.cookie = `userId=${userId}; expires=${new Date(getDateTime)}; path=/`;
+      document.cookie = `role=${role};expires=${new Date(getDateTime)}; path=/`;
     }
-  },
-  setUser(newUser) {
-    console.log('newUser', newUser);
-    this.user = {
-      ...newUser
-    };
-
-    // this.reGetAllData();
   },
   getUserCookie() {
     const userToken = document.cookie.replace(

@@ -96,6 +96,7 @@ export default {
         /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
         '$1'
       );
+      const id = parseInt(this.userId);
 
       const url = `${import.meta.env.VITE_API_URL}/600/posts`;
       const postData = {
@@ -104,7 +105,7 @@ export default {
         content: this.content,
         is_spoiled: false,
         movieId: this.tempMovie.id,
-        userId: this.userId
+        userId: id
       };
 
       axios

@@ -24,7 +24,6 @@
 import modalMixin from '@/utils/modalMixin.js';
 export default {
   props: ['tempPost'],
-  data() {},
   mixins: [modalMixin]
 };
 </script>

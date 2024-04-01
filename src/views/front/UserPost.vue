@@ -52,6 +52,7 @@ export default {
     getUserPost() {
       const userId = document.cookie.replace(/(?:(?:^|.*;\s*)userId\s*=\s*([^;]*).*$)|^.*$/, '$1');
 
+      // http://localhost:3001/users/2
       const url = `${import.meta.env.VITE_API_URL}/users/${userId}?_embed=posts`;
       axios
         .get(url)
