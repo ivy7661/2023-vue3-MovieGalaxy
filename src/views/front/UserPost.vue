@@ -26,15 +26,14 @@
       </div>
     </div>
   </div>
-  <!-- :temp-movie="movie" -->
-  <!-- <Post-Detail ref="userpostModal" :temp-post="tempPost"></Post-Detail> -->
+
   <User-Post-Detail ref="userpostModal" :temp-post="tempPost"></User-Post-Detail>
 </template>
 
 <script>
 import axios from 'axios';
 import UserPostDetail from '@/components/front/post/UserPostDetail.vue';
-// import PostDetail from '@/components/front/post/PostDetail.vue';
+
 export default {
   data() {
     return {

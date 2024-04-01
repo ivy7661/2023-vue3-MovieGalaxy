@@ -350,6 +350,15 @@
       "movieId": 1,
       "userId": 2,
       "id": 10
+    },
+    {
+      "userName": "",
+      "title": "admin",
+      "content": "",
+      "is_spoiled": false,
+      "movieId": 1,
+      "userId": 3,
+      "id": 11
     }
   ]
 }

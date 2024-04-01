@@ -69,8 +69,7 @@ export default {
   data() {
     return {
       userId: '',
-      userToken: '',
-      newToken: ''
+      userToken: ''
     };
   },
   created() {
@@ -83,7 +82,7 @@ export default {
       this.userToken = document.cookie.replace(
         /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
         '$1'
-      ); // 或者您也可以再次從 localStorage 中讀取最新的登入狀態
+      );
     });
   },
   methods: {
@@ -110,7 +109,6 @@ export default {
         title: '登出成功'
       });
       this.$router.replace('/login');
-      // this.userToken = null;
       this.userToken = document.cookie.replace(
         /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
         '$1'
