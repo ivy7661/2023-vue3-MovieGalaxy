@@ -73,13 +73,17 @@ export default {
       newToken: ''
     };
   },
-  mounted() {
+  created() {
+    this.userToken = document.cookie.replace(
+      /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
+      '$1'
+    );
+    // 監聽登入成功事件，以便在登入成功後更新登入狀態
     this.$bus.on('login-success', () => {
-      // 登入成功後更新 userToken，這裡可以根據實際情況從 cookie 或其他地方獲取 userToken
       this.userToken = document.cookie.replace(
         /(?:(?:^|.*;\s*)userToken\s*=\s*([^;]*).*$)|^.*$/,
         '$1'
-      );
+      ); // 或者您也可以再次從 localStorage 中讀取最新的登入狀態
     });
   },
   methods: {

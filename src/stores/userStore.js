@@ -25,5 +25,10 @@ export default defineStore('userStore', {
       userToken: userToken || null,
       userId: parseInt(userId, 10) || null
     };
+  },
+  cleanUser() {
+    this.user = null;
+    document.cookie = `userToken=0; expires=${new Date('2000/1/1 12:00')}; path=/`;
+    document.cookie = `userId=0; expires=${new Date('2000/1/1 12:00')}; path=/`;
   }
 });

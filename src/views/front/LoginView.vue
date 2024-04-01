@@ -67,9 +67,6 @@ export default {
             this.$router.replace('/');
             Alert.toastTop('success', '登入成功');
             this.$bus.emit('login-success');
-            // setTimeout(() => {
-            //   location.reload();
-            // }, 800);
           }
           if (res.data.accessToken && res.data.user.role === 'admin') {
             this.setUserCookie(res.data.user.id, res.data.accessToken, res.data.user.role);
