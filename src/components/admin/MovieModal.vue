@@ -105,10 +105,10 @@
                 <div class="col-md-4">
                   <label for="ratingStars" class="form-label">評分</label>
                   <input
-                    type="text "
+                    type="number"
                     id="ratingStars"
                     class="form-control"
-                    v-model="editMovie.ratingStars"
+                    v-model.number="editMovie.ratingStars"
                   />
                 </div>
                 <div class="col-md-4">

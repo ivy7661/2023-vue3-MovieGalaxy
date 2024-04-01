@@ -5,8 +5,8 @@
         <i class="bi bi-person-fill fs-2"></i>
         <h2 class="pt-2 ms-3">會員基本資料</h2>
       </div>
-      <div class="row">
-        <div class="col-12 info-container px-5 py-6">
+      <div class="row justify-content-center">
+        <div class="col-12 info-container px-2 px-lg-5 py-6">
           <h5 class="text-start">會員名稱： {{ user.userName }}</h5>
           <h5 class="text-start">帳號： {{ user.email }}</h5>
           <h5 class="text-start">手機號碼： {{ user.phone }}</h5>

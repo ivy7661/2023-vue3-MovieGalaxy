@@ -4,7 +4,7 @@
     <main class="container mainView">
       <RouterView></RouterView>
     </main>
-    <!-- <Returntop-Btn></Returntop-Btn> -->
+    <Returntop-Btn></Returntop-Btn>
     <FooterComponent />
   </div>
 </template>
@@ -12,11 +12,13 @@
 <script>
 import HeaderComponent from '@/components/front/HeaderComponent.vue';
 import FooterComponent from '@/components/front/FooterComponent.vue';
+import ReturntopBtn from '@/components/front/index/ReturntopBtn.vue';
 
 export default {
   components: {
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ReturntopBtn
   }
 };
 </script>
