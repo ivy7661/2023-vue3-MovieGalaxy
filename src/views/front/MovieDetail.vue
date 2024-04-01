@@ -212,5 +212,6 @@ hr {
 .still {
   width: 250px;
   height: 150px;
+  cursor: pointer;
 }
 </style>

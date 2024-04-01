@@ -56,19 +56,18 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { mapState, mapActions } from 'pinia';
-import movieStore from '@/stores/movieStore';
-
 export default {
   data() {
     return {
-      swiper1: null
+      swiper1: null,
+      movies: []
     };
   },
   mounted() {
@@ -96,11 +95,20 @@ export default {
       }
     });
   },
-  computed: {
-    ...mapState(movieStore, ['movies'])
-  },
   methods: {
-    ...mapActions(movieStore, ['getMovies'])
+    getMovies() {
+      this.$bus.emit('getMovie-start');
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/movies`)
+        .then((res) => {
+          this.movies = res.data;
+          console.log(this.movies);
+          this.$bus.emit('getMovie-success');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>
