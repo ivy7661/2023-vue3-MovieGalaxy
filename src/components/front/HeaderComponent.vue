@@ -17,7 +17,6 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarText"
-          @click="toggleNavbar"
         >
           <i class="bi bi-list fs-3 text-white" style="font-weight: bold"></i>
         </button>
@@ -88,7 +87,6 @@ export default {
   },
   mounted() {
     this.navbarCollapse();
-    // this.mobileClose();
   },
   methods: {
     memberArea() {
@@ -129,14 +127,6 @@ export default {
           navbarCollapse.classList.remove('show');
         });
       });
-    },
-    toggleNavbar() {
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-      if (navbarCollapse.classList.contains('show')) {
-        navbarCollapse.classList.remove('show');
-      } else {
-        navbarCollapse.classList.add('show');
-      }
     }
   }
 };
