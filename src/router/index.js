@@ -44,6 +44,20 @@ const router = createRouter({
               component: () => import('@/views/front/UserPost.vue')
             }
           ]
+        },
+        {
+          path: 'aboutUs',
+          component: () => import('@/views/front/AboutUs.vue'),
+          children: [
+            {
+              path: 'operationPrinciple',
+              component: () => import('@/views/front/OperationPrinciple.vue')
+            },
+            {
+              path: 'QA',
+              component: () => import('@/views/front/QA.vue')
+            }
+          ]
         }
       ]
     },

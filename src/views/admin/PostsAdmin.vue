@@ -106,9 +106,10 @@ export default {
 <style lang="scss" scoped>
 .post-content {
   width: 200px;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 h2 {
   @include Inter;

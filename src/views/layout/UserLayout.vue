@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .mainView {
-  min-height: calc(100vh - 300px);
+  min-height: calc(100vh - 280px);
 }
 .user-container {
   background: var(

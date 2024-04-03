@@ -25,7 +25,9 @@
       <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarText">
         <ul class="navbar-nav mt-2 mt-lg-0">
           <li class="nav-item mb-2 mb-lg-0">
-            <RouterLink to="" class="nav-link pt-3 mx-2 fw-bold text-white fs-6 d-inline-block"
+            <RouterLink
+              to="/aboutUs/operationPrinciple"
+              class="nav-link pt-3 mx-2 fw-bold text-white fs-6 d-inline-block"
               >關於影評星塵</RouterLink
             >
           </li>
