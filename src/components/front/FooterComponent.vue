@@ -23,8 +23,10 @@
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/language.svg" alt="aboutUs" style="width: 20px; height: 20px" />
                 <h6 class="text-light my-2">關於影評星塵</h6>
-                <p class="mb-1">Q & A</p>
-                <p class="mb-1">網站理念</p>
+                <RouterLink class="footer-link mb-1" to="/aboutUs/operationPrinciple">
+                  網站理念
+                </RouterLink>
+                <RouterLink class="footer-link mb-1" to="/aboutUs/QA"> Q & A </RouterLink>
               </div>
             </div>
             <div class="col-12 mb-3 mb-lg-0 col-lg-3">
@@ -48,6 +50,9 @@
 
 <style lang="scss" scoped>
 p {
+  color: #c5c1c1;
+}
+.footer-link {
   color: #c5c1c1;
 }
 </style>
