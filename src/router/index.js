@@ -58,6 +58,20 @@ const router = createRouter({
               component: () => import('@/views/front/QA.vue')
             }
           ]
+        },
+        {
+          path: 'rules',
+          component: () => import('@/views/front/PlatformRules.vue'),
+          children: [
+            {
+              path: 'userRules',
+              component: () => import('@/views/front/UserRules.vue')
+            },
+            {
+              path: 'commentRules',
+              component: () => import('@/views/front/CommentRules.vue')
+            }
+          ]
         }
       ]
     },

@@ -33,8 +33,10 @@
               <div class="d-flex flex-column align-items-center">
                 <img src="/icons/chat.svg" alt="chat" style="width: 20px; height: 20px" />
                 <h6 class="text-light my-2">平台規則</h6>
-                <p class="mb-1">用戶規章</p>
-                <p class="mb-1">評論規章</p>
+                <RouterLink class="footer-link mb-1" to="/rules/userRules"> 用戶規章 </RouterLink>
+                <RouterLink class="footer-link mb-1" to="/rules/commentRules">
+                  評論規章
+                </RouterLink>
               </div>
             </div>
           </div>
