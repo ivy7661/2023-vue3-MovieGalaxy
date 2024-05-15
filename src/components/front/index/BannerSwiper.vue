@@ -11,27 +11,36 @@
               <div class="d-flex justify-content-center">
                 <img :src="movie.images[0]" class="carousel-img" alt="oppen03" />
                 <div class="car-caption d-flex flex-column">
-                  <h3 class="carousel-title">{{ movie.name }}</h3>
-                  <h3 class="carousel-title">{{ movie.englishName }}</h3>
-                  <p class="carousel-content fs-6">
-                    {{ movie.intro }}
-                  </p>
-                  <div class="wrap-carousel-content">
-                    <div class="wrap-star">
-                      <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
-                        <img src="/icons/star1.png" alt="star-full" width="30" height="30" />
-                      </span>
-                      <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
-                        <img src="/icons/star0.png" alt="star-empty" width="23" height="23" />
-                      </span>
+                  <div class="wrap-carousel-title d-flex flex-column">
+                    <h3 class="carousel-title">{{ movie.name }}</h3>
+                    <h3 class="carousel-title">{{ movie.englishName }}</h3>
+                  </div>
+                  <div class="d-flex flex-column justify-content-between">
+                    <div class="carousel-intro fs-6">
+                      {{ movie.intro }}
                     </div>
-                    <p class="fs-6 carousel-content2">{{ movie.info }}</p>
-                    <button class="btn-carousel">
-                      <a href="#" class="fs-6 btn-index-a"
-                        >read more <span class="me-2"></span
-                        ><img src="/icons/PlayButton_purple.png" alt="" class="pb-1" />
-                      </a>
-                    </button>
+                    <div class="wrap-carousel-content">
+                      <div class="wrap-star">
+                        <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-1">
+                          <img src="/icons/star_full.svg" alt="star-full" width="30" height="30" />
+                        </span>
+                        <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-1">
+                          <img
+                            src="/icons/star_empty.svg"
+                            alt="star-empty"
+                            width="23"
+                            height="23"
+                          />
+                        </span>
+                      </div>
+                      <p class="fs-6 carousel-content2">{{ movie.info }}</p>
+                      <button class="btn-carousel">
+                        <router-link :to="`movies/${movie.id}`" class="fs-6 btn-index-a"
+                          >read more <span class="me-2"></span
+                          ><img src="/icons/PlayButton_purple.svg" alt="" class="pb-1" />
+                        </router-link>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -47,19 +56,18 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { mapState, mapActions } from 'pinia';
-import movieStore from '@/stores/movieStore';
-
 export default {
   data() {
     return {
-      swiper1: null
+      swiper1: null,
+      movies: []
     };
   },
   mounted() {
@@ -87,11 +95,20 @@ export default {
       }
     });
   },
-  computed: {
-    ...mapState(movieStore, ['movies'])
-  },
   methods: {
-    ...mapActions(movieStore, ['getMovies'])
+    getMovies() {
+      this.$bus.emit('getMovie-start');
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/movies`)
+        .then((res) => {
+          this.movies = res.data;
+          console.log(this.movies);
+          this.$bus.emit('getMovie-success');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>
@@ -102,7 +119,7 @@ export default {
   overflow: hidden;
 }
 .swiper-button-prev {
-  background: url(/icons/leftArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_prev.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 200px;
   left: 5px;
@@ -111,7 +128,7 @@ export default {
   color: transparent;
 }
 .swiper-button-next {
-  background: url(/icons/rightArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_next.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 200px;
   right: 5px;
@@ -150,12 +167,21 @@ export default {
   margin-left: 30px;
   background-color: $bg-c1;
 }
+.wrap-carousel-title {
+  height: 130px;
+}
 .wrap-carousel-content {
-  height: 160px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+.carousel-intro {
+  height: 100px;
+  @include NotoSans;
+  color: #fff;
+  font-weight: 400;
 }
 .carousel-content {
   max-width: 400px;

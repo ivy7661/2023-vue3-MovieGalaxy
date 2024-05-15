@@ -14,26 +14,27 @@
           <template v-if="movie.is_hot === 1">
             <div class="swiper-slide">
               <div class="wrap-card">
-                <div class="d-flex justify-content-center">
-                  <RouterLink to="">
+                <div class="d-flex justify-content-center mb-2">
+                  <RouterLink :to="`movies/${movie.id}`">
                     <img :src="movie.image" :alt="movie.name" class="w-100 d-block rounded-3 pic" />
                   </RouterLink>
                 </div>
                 <div class="wrap-info d-flex flex-column justify-content-between py-3 py-lg-4">
-                  <div class="d-flex">
-                    <span v-for="i in movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                      <img src="/icons/star1.png" alt="star-full" class="star1" />
+                  <div class="d-flex justify-content-center mb-3">
+                    <span v-for="i in movie.ratingStars" :key="i + 123" class="me-lg-1">
+                      <img src="/icons/star_full.svg" alt="star-full" class="star" />
                     </span>
-                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="mx-lg-1">
-                      <img src="/icons/star0.png" alt="star-empty" class="star0 pt-1" />
+                    <span v-for="i in 5 - movie.ratingStars" :key="i + 123" class="me-lg-1">
+                      <img src="/icons/star_empty.svg" alt="star-empty" class="star" />
                     </span>
                   </div>
-                  <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
-                  <btton class="btn-vedio">
-                    <a href="#" class="vedio-link">
-                      <img src="/icons/PlayButton.svg" alt="" /><span class="me-2"></span>預告片
-                    </a>
-                  </btton>
+                  <RouterLink :to="`movies/${movie.id}`">
+                    <h4 class="fs-5 text-white mb-2 mb-lg-3">{{ movie.name }}</h4>
+                  </RouterLink>
+                  <div class="d-flex flex-row type-text mt-2">
+                    <i class="bi bi-hash fs-6"></i>
+                    <p class="fs-6">{{ movie.type }}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,7 +122,7 @@ export default {
   overflow: hidden;
 }
 .swiper-button-prev2 {
-  background: url(/icons/leftArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_prev.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 230px;
   left: 5px;
@@ -132,7 +133,7 @@ export default {
   z-index: 999;
 }
 .swiper-button-next2 {
-  background: url(/icons/rightArrow.png) center center no-repeat;
+  background: url(/icons/swiper_btn_next.svg) center center no-repeat;
   background-size: 42px 60px;
   top: 230px;
   right: 5px;
@@ -296,10 +297,10 @@ export default {
   background: #97794c;
   filter: blur(150px);
 }
-.star1 {
+.star {
   max-width: 30px;
 }
-.star0 {
-  max-width: 23px;
+.type-text {
+  color: #9d9ba2;
 }
 </style>

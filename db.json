@@ -1,4 +1,70 @@
 {
+  "users": [
+    {
+      "email": "ivyadmin@gmail.com",
+      "password": "$2a$10$SRRoz8K4yd26VPs5y6u3sOtw4/0x/L5KJgEjVY0AR2AuzaKusfOru",
+      "userName": "ivy",
+      "phone": "0912345678",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "admin01@gmail.com",
+      "password": "$2a$10$DWh.AQsB1yLGnGiu5Q/.G.XamEHWuQay/khq8s2yI077m7FQz4hIm",
+      "userName": "admin01",
+      "phone": "0912345678",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "email": "admin02@gmail.com",
+      "password": "$2a$10$rVSeOl4.k77KwnNd8VESA.9zzUHMfoGW8tDtvVi68QW478JBo5v/6",
+      "userName": "admin02",
+      "phone": "0912345678",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "email": "james@gmail.com",
+      "password": "$2a$10$zanPWlGzY5xA6Ynvq.PoiuhHA9NejN5JuD6GM8at3zMZ6yg/fN4bm",
+      "userName": "James Lin",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "email": "belly@gmail.com",
+      "password": "$2a$10$Gwk0dJeB0ZrhE8SC6eQIROpiIU3OQ7pL6BnBGn8HEWzAeBv.HQOPS",
+      "userName": "Belly Tsai",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "email": "jason@gmail.com",
+      "password": "$2a$10$Z9ssH4Y4fnA38VV.LT8WjOgolUGIFiAentl/H2taLFMdix3uB3pvm",
+      "userName": "Jason Van",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "email": "eric@gmail.com",
+      "password": "$2a$10$bOoAIt2QtarlqNp60cX03u2/rGB5Og15D.bx5mt08R/lCrOy6mc7W",
+      "userName": "Eric Chang",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 7
+    },
+    {
+      "email": "jessica@gmail.com",
+      "password": "$2a$10$fW0Ygv8Ufo6yCMSa3zwrQ.ffpv3HPovWik672Bx0cpO5AYuFnpDe2",
+      "userName": "Jessica Wang",
+      "phone": "0912345678",
+      "role": "user",
+      "id": 8
+    }
+  ],
   "movies": [
     {
       "id": 1,
@@ -23,7 +89,7 @@
         "https://i.meee.com.tw/EXRsLGY.png"
       ],
       "is_hot": 1,
-      "is_coming": 1,
+      "is_coming": 0,
       "on_banner": 1
     },
     {
@@ -38,8 +104,8 @@
       "intro": "「小丑」這部戲圍繞在這個經典反派上，是大螢幕上前所未見的一部原創獨立故事。他的故事不只是一個寫實的角色研究，更代表一個意義深遠的警示。",
       "info": "本片的票房超過10億美元，為史上第一部破10億美元的R級電影",
       "staff": {
-        "director": "克里斯多福·諾蘭",
-        "actor": "席尼·墨菲、艾蜜莉·布朗、麥特·戴蒙"
+        "director": "陶德·菲利普斯",
+        "actor": "瓦昆·菲尼克斯、勞勃·狄尼洛、薩琪·畢茲"
       },
       "image": "https://i.meee.com.tw/eiA07hz.jpg",
       "images": [
@@ -75,7 +141,7 @@
         "https://i.meee.com.tw/BfHRSAx.jpg"
       ],
       "is_hot": 1,
-      "is_coming": 1,
+      "is_coming": 0,
       "on_banner": 1
     },
     {
@@ -86,7 +152,7 @@
       "movieLength": "157分鐘",
       "type": "劇情片",
       "ratingStars": 5,
-      "videoId": "",
+      "videoId": "HwKqoXRnDPU",
       "intro": "年輕的Coriolanus Snow如何在饑荒時期的潛在絕望中找到了自己的力量和命運。在為了生存而奮鬥的同時，他必須面對道德選擇和倫理困境，逐漸發現了自己真正的內心。",
       "info": "為《飢餓遊戲三部曲》的前傳",
       "staff": {
@@ -101,7 +167,7 @@
         "https://i.meee.com.tw/dxfd0f7.jpg"
       ],
       "is_hot": 1,
-      "is_coming": 1,
+      "is_coming": 0,
       "on_banner": 1
     },
     {
@@ -112,7 +178,7 @@
       "movieLength": "163分鐘",
       "type": "動作片",
       "ratingStars": 4,
-      "videoId": "",
+      "videoId": "KO7OTemK-uE",
       "intro": "伊森·韓特和他的不可能任務情報局（IMF）團隊展開他們迄今為止最危險的任務：阻止一件威脅著全人類的危險武器落入惡人的手中。",
       "info": "演員的表現、動作戲、攝影、幽默、情感刻畫皆為評論家讚譽的焦點",
       "staff": {
@@ -126,7 +192,7 @@
         "https://i.meee.com.tw/1R1DlqZ.jpg",
         "https://i.meee.com.tw/tRdsU3u.jpg"
       ],
-      "is_hot": 1,
+      "is_hot": 0,
       "is_coming": 1,
       "on_banner": 0
     },
@@ -138,7 +204,7 @@
       "movieLength": "181分鐘",
       "type": "動作片",
       "ratingStars": 5,
-      "videoId": "",
+      "videoId": "Mo66zXsDPo4",
       "intro": "在彈指事件中倖存下來的復仇者聯盟成員與他們的盟友共同努力扭轉薩諾斯所造成的災難。",
       "info": "獲得影評人及普羅大眾的廣泛讚譽，它還打破了無數的票房紀錄，全球票房收入超過27億美元",
       "staff": {
@@ -153,7 +219,7 @@
         "https://i.meee.com.tw/w4epl4H.jpg"
       ],
       "is_hot": 1,
-      "is_coming": 1,
+      "is_coming": 0,
       "on_banner": 0
     },
     {
@@ -164,7 +230,7 @@
       "movieLength": "155分鐘",
       "type": "動作片",
       "ratingStars": 5,
-      "videoId": "",
+      "videoId": "qSW95b7_z-Y",
       "intro": "出身貴族家庭的年輕繼承者背負起守護銀河系中最寶貴的資產也是最重要的元素。",
       "info": "在第94屆奧斯卡金像獎上斬獲六項大獎",
       "staff": {
@@ -179,7 +245,7 @@
         "https://i.meee.com.tw/fYetaLG.jpg"
       ],
       "is_hot": 1,
-      "is_coming": 1,
+      "is_coming": 0,
       "on_banner": 1
     },
     {
@@ -190,7 +256,7 @@
       "movieLength": "106分鐘",
       "type": "愛情片",
       "ratingStars": 5,
-      "videoId": "",
+      "videoId": "kA244xewjcI",
       "intro": "講述了兩個兒時好友重聚的故事，他們思考著彼此的關係以及自己的日常生活。",
       "info": "影評界對宋的編導能力以及三位主演的演出給予一致好評",
       "staff": {
@@ -216,7 +282,7 @@
       "movieLength": "120分鐘",
       "type": "劇情片",
       "ratingStars": 4,
-      "videoId": "",
+      "videoId": "TiMqzyJvCh8",
       "intro": "主角花垣武道企圖用穿越時空的能力拯救親友，以不良少年為題材的青春熱血漫畫作品。",
       "info": "電影票房總計45億日圓，名列2021年日本真人電影票房冠軍",
       "staff": {
@@ -230,9 +296,137 @@
         "https://i.meee.com.tw/LiV3cFW.jpg",
         "https://i.meee.com.tw/V6t7QK5.jpg"
       ],
-      "is_hot": 1,
+      "is_hot": 0,
       "is_coming": 1,
       "on_banner": 1
+    },
+    {
+      "images": [
+        "https://i.meee.com.tw/LTQKggu.jpg",
+        "https://i.meee.com.tw/M8QSkzS.jpeg",
+        "https://i.meee.com.tw/u5U3SWq.png",
+        "https://i.meee.com.tw/Ck4rGvV.jpg"
+      ],
+      "staff": {
+        "actor": "羅莎莉·托馬斯、勞倫斯·魯波、可拉·楚布",
+        "director": "薛瑞爾·佩萊格"
+      },
+      "name": "失戀治療所",
+      "englishName": "The Heartbreak Agency",
+      "language": "德語",
+      "movieLength": "96",
+      "info": "2024 最新浪漫喜劇片",
+      "type": "愛情片",
+      "ratingStars": 4,
+      "videoId": "QU-EJstiPcg",
+      "intro": "一位記者對失戀治療充滿疑心，但為了寫報導文章不得不親自體驗，最後卻對迷人的治療師敞開心房。",
+      "is_coming": 1,
+      "image": "https://i.meee.com.tw/xJ7FPSP.jpg",
+      "id": 10
+    },
+    {
+      "images": [
+        "https://i.meee.com.tw/oPOIznf.jpg",
+        "https://i.meee.com.tw/Myu9fDP.jpg",
+        "https://i.meee.com.tw/sVD2bEB.jpg",
+        "https://i.meee.com.tw/4i6qOEs.jpg"
+      ],
+      "staff": {
+        "director": "李察·寇蒂斯",
+        "actor": "多姆納爾·格里森、瑞秋·麥亞當斯、比爾·奈伊"
+      },
+      "image": "https://i.meee.com.tw/7jkncDi.jpg",
+      "name": "真愛每一天",
+      "id": 11,
+      "englishName": "About Time",
+      "language": "英語",
+      "movieLength": "124",
+      "type": "愛情片",
+      "ratingStars": 5,
+      "videoId": "clZZFWmwyjo",
+      "intro": "在提姆21歲生日那天，他從父親那裏得知他家族的男人都有不為人知的特殊能力，此能力可以讓使用者回到曾生活過的某個時刻。",
+      "is_hot": 1,
+      "info": "英式浪漫溫馨倫理喜劇+時空戀旅人科幻穿越劇"
+    },
+    {
+      "images": [
+        "https://i.meee.com.tw/0ba64PB.jpg",
+        "https://i.meee.com.tw/E8lIR8P.jpg",
+        "https://i.meee.com.tw/8zJxiSV.jpg",
+        "https://i.meee.com.tw/ZFCxcVX.jpg"
+      ],
+      "staff": {
+        "director": "基斯頓·迪他",
+        "actor": "莉莉·柯林斯、山姆·克萊弗林、塔姆善·厄格頓"
+      },
+      "name": "親愛的，原來是你",
+      "videoId": "jsN6jZ8JxuI",
+      "englishName": "Love, Rosie",
+      "id": 12,
+      "image": "https://i.meee.com.tw/AsIYYPd.jpg",
+      "language": "英語",
+      "movieLength": "102",
+      "type": "愛情片",
+      "ratingStars": 4,
+      "is_coming": 1,
+      "info": "由基斯頓·迪他執導的英德合拍浪漫喜劇電影，改編自西西莉雅·艾亨2004年撰寫的小說《我一直都在》。",
+      "intro": "敘述亞歷克斯和露絲這對從小一起生活到大的好友，明明都喜歡對方卻遲遲未坦誠對彼此的心意的故事。"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "userId": 4,
+      "userName": "James Lin",
+      "title": "科學與道德的交織",
+      "content": "影片不僅探討了科學家在戰爭時期所承受的壓力，也提出了深刻的道德問題。奧本海默的故事讓觀眾思考科學與道德之間的平衡，以及科技發展對世界的影響。同時也反映出在困難時刻，個人的信仰和價值觀會如何影響重大決定。總的來說，《Oppenheimer》是一部富有挑戰性和啟發性的電影，讓觀眾不僅了解科學的奇妙，也思考人類的道德責任。這部電影將深深觸動觀眾的內心，值得一看。",
+      "is_spoiled": false
+    },
+    {
+      "userName": "James Lin",
+      "title": "一場令人心碎的演技經典",
+      "content": "<p>在華納兄弟的這次翻拍中，我們見證了一場關於心理健康、社會不公和人性黑暗面的深刻探索。影片由飾演小丑的菲尼克斯（Joaquin Phoenix）所主演，他的精湛演技將這個角色塑造得深入人心。<br>電影以高度社會不公的高警戒下的哥譚城为背景，展示了主人公亞瑟（Arthur Fleck）的艱難生活。亞瑟是一名職業小丑，生活在貧困窮困的環境中，他與生母相依為命，卻常常遭受虐待和社會排斥。然而，他對生活充滿幻想，希望能成為喜劇演員，但逐漸被現實和不公所擊垮。<br><br>菲尼克斯的演技可謂完美無瑕，他通過精湛的表演帶領觀眾進入了亞瑟的內心世界。他細膩而震撼的表演讓觀眾深深感受到了亞瑟的痛苦、絕望和瘋狂。在他的演技下，小丑不再是一個單純的反派角色，而是一個深受傷害的人類，他的行為背後蘊含著無盡的苦痛和無助。</p><h4><br>細膩<strong>又令人心碎的演出</strong></h4><p>透過菲尼克斯細膩的表演，我們看到了一個人的心靈在逐漸走向破裂的過程。他對待他人的憎恨和怨恨逐漸累積，最終爆發出驚人的暴力。這一過程令人震驚和心碎，但也引人深思，是對當代社會黑暗面的殘酷反思。</p><p>&nbsp;</p><h4><strong>適當的配樂</strong></h4><p>影片的攝影和音樂也是其成功的關鍵之一。攝影師勞倫斯謝爾（Lawrence Sher）以暗沉的色調和精心構圖，完美地營造出哥譚城的陰暗氛圍，使觀眾深深沉浸在這個破碎的城市中。同時，電影的配樂由著名作曲家哈迪·法金（Hildur Guðnadóttir）操刀，以強烈的氛圍音樂增強了角色情感的表達，使觀眾更加投入其中。</p><p>《小丑JOKER》通過對一個普通人如何走向瘋狂的深刻描繪，引發了觀眾對社會不公和心理健康問題的深思。菲尼克斯的演技更是該片的一大亮點，他用自己出色的表演展現了小丑這個角色的多面性和深度。這部電影不僅僅是一部超級英雄電影，更是一部思考人性的黑暗面和社會現實的作品，值得觀眾深入品味與反思。</p>",
+      "is_spoiled": false,
+      "movieId": 2,
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "userName": "James Lin",
+      "title": "勇氣與信念的戰爭之旅",
+      "content": "<p>影片以真實事件為基礎，講述了醫護兵德斯蒙·多斯（Desmond Doss）在戰爭中的英勇事蹟。德斯蒙·多斯因著信念和原則，堅決拒絕持槍，但他卻在戰場上展現了非凡的勇氣和決心。在一次又一次的戰鬥中，他不計個人安危，不屈不撓地救援了超過75名戰友，成為了戰場上的英雄。<br>&nbsp;</p><h4>對戰爭的描寫</h4><p>梅爾·吉布森導演以其獨特的風格將這個感人至深的故事呈現在觀眾面前。他對戰爭場面的描寫極具震撼力，讓人仿佛置身於戰場之中，感受到了生死存亡的壓力和驚險刺激。同時，他對人物內心世界的描繪也非常細膩，使觀眾能夠深入理解主人公的信念和勇氣。<br>&nbsp;</p><h4>演技精湛動人</h4><p>影片的演員陣容也是其成功的關鍵之一。安德魯·加菲爾德（Andrew Garfield）在片中飾演德斯蒙·多斯，他通過出色的演技將這個角色詮釋得淋漓盡致。他不僅表現出德斯蒙·多斯的堅定和勇敢，還展現了他的柔情和人性。同時，其他配角演員的表現也十分出色，為影片增添了不少色彩。</p><p>總的來說，《鋼鐵英雄》是一部感人至深的戰爭電影，它通過一個真實的英雄故事，展示了人性的光輝和勇氣的力量。梅爾·吉布森導演以其獨特的視角和技巧將這個故事呈現得淋漓盡致，讓觀眾深受觸動。這部電影不僅是一個英雄的傳記，更是對人性的深刻探索，值得觀眾一看再看。</p>",
+      "is_spoiled": false,
+      "movieId": 3,
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "userName": "James Lin",
+      "title": "對權力與青春的探索",
+      "content": "<p>該片以帕納姆城為背景，將觀眾帶入了一個充滿暴力和不公的世界。科林斯作為一個出身名門但家道中落的年輕人，他面臨著無盡的挑戰和壓力。在一場饑餓遊戲的舞台上，他遇到了鳴鳥艾莉西亞（Lucy Gray Baird），一個來自貧困區的女孩，她的出現改變了科林斯的命運，也讓他對權力和正義有了不同的認識。</p><p>&nbsp;</p><h4>角色內在的衝突</h4><p>影片通過深入的角色描寫和情感的抒發，展現了青春期少年的內心掙扎和成長歷程。科林斯的形象既是一個嚴肅的政治家，又是一個脆弱的青年，他的內心矛盾和情感紛擾令人感到震撼和共鳴。鳴鳥艾莉西亞的形象也是一個充滿活力和魅力的少女，她的出現讓觀眾看到了另一個世界的美好和可能。<br>&nbsp;</p><h4>氛圍令人沉浸其中</h4><p>影片的攝影和音樂設計也是其成功的關鍵之一。攝影師將帕納姆城的陰暗和血腥表現得淋漓盡致，使觀眾感受到了戰爭和暴力的殘酷。同時，音樂則營造出了一個神秘和動人的氛圍，讓觀眾更加投入到故事中。</p><p>總的來說，《鳴鳥與游蛇之歌》是一部優秀的電影，它通過對青春期少年的成長和對權力的追求的探討，展現了作者對人性和社會的深刻思考。影片不僅是一個故事的展示，更是一個對社會現實和人性深度的反思，值得觀眾一看再看。</p>",
+      "is_spoiled": false,
+      "movieId": 4,
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "userName": "James Lin",
+      "title": "揭示人性與科技的雙面性",
+      "content": "<p>該片以奧本海默的生平為主線，通過回顧他的童年、學術生涯和戰爭經歷，展現了他作為一個科學家和人類的複雜性。他在科學上的成就和對人類歷史的影響力是無可否認的，但同時他也面臨著道德和倫理上的困惑。他對原子彈的研發帶來了巨大的科技進步，但同時也帶來了無法挽回的人類悲劇。</p><h4>場景極其震撼</h4><p>導演諾蘭以其標誌性的風格將奧本海默的故事呈現在觀眾面前。他巧妙地運用時間和空間的轉換，使觀眾仿佛置身於奧本海默的思想世界之中，感受到他的掙扎和挑戰。同時，他對戰爭場面的描寫也極具震撼力，讓觀眾深深感受到了戰爭的殘酷和深度。</p><h4>演技精湛</h4><p>影片的演員陣容也是其成功的關鍵之一。主演飾演奧本海默的演員通過出色的演技將這個角色詮釋得淋漓盡致，使觀眾更加真實地了解了他的內心世界和人生選擇的複雜性。配角演員們的出色表現也為影片增添了不少色彩，使整個故事更加豐富和生動。</p><p>&nbsp;</p><h4>最終與愛因斯坦的談話發人省思</h4><p>愛因斯坦對奧本海默說道現在輪到你來承擔你的成就所帶來的後果了：<strong>「當人們折磨夠你之後，就會頒獎給你，好像在原諒你的樣子，但其實這些舉動都只是為了他們自己。」</strong></p><p>總的來說，《奧本海默》是一部優秀的電影，它通過對奧本海默這一重要歷史人物的生平故事的詮釋，深刻探討了人性、科技和歷史的種種問題。影片不僅是一個故事的展示，更是一個對當代社會和人類命運的深刻反思，值得觀眾一看再看。</p>",
+      "is_spoiled": true,
+      "movieId": 1,
+      "userId": 4,
+      "id": 5
+    },
+    {
+      "userName": "James Lin",
+      "title": "結局令人震驚",
+      "content": "<p>在故事的結局，我們見識到主人公科林斯（Coriolanus Snow）的崛起和墮落。作為一個出身名門但家道中落的年輕人，科林斯不得不在一個充滿暴力和不公的世界中生存。他的遭遇和選擇形塑了他的性格和命運，最終將他推向了權力和黑暗的深淵。</p><p>故事的結局發生在鳴鳥艾莉西亞（Lucy Gray Baird）和科林斯之間的決戰中。科林斯意識到他無法擺脫自己的命運，他試圖控制艾莉西亞，但最終失敗了。在一場激烈的衝突中，艾莉西亞選擇離開，讓科林斯深陷孤獨和絕望之中。這個結局不僅是一個人物的轉變，更是一個時代的終結，標誌著科林斯成為了後來的總統，但也意味著他的青春和理想的終結。</p><p>除了科林斯和艾莉西亞之外，其他角色的命運也在結局中得到了解決。一些人成為了科林斯的盟友，而其他人則被深深地牽連在他的陰謀之中。整個故事的結局充滿了戲劇性和情感張力，讓讀者不禁為每個角色的命運感到心痛和遺憾。</p><p>總的來說，《鳴鳥與游蛇之歌》的結局是一個意味深長的轉折點，標誌著主人公的成長和墮落，也反映了整個社會和時代的變遷。這個結局讓人不禁深思人性、權力和正義的本質，並引發了對人類命運和歷史的深刻反思。</p>",
+      "is_spoiled": false,
+      "movieId": 4,
+      "userId": 4,
+      "id": 6
     }
   ]
 }

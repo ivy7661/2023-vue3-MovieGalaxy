@@ -17,7 +17,7 @@
             <h3>奧本海默</h3>
             <div class="d-flex">
               <span v-for="i in 5" :key="i + 123" class="mx-lg-1">
-                <img src="/icons/star1.png" alt="star-full" class="star1" />
+                <img src="/icons/star_full.svg" alt="star-full" class="star1" />
               </span>
             </div>
             <h4>第96屆奧斯卡劇情類最佳影片</h4>
@@ -28,10 +28,10 @@
           Max同步上映的計劃中產生了分歧，使得諾蘭宣佈不再與華納兄弟進行合作，因此本片成為諾蘭繼《跟蹤》（1998年）和《記憶拼圖》（2000年）後，第三部非.....
         </p>
         <button class="btn-carousel">
-          <a href="" class="btn-index-a"
+          <router-link to="/movies/1" class="btn-index-a"
             >read more <span class="ml-15"></span
-            ><img src="/icons/PlayButton_purple.png" alt="" class="mb-1 ms-1" />
-          </a>
+            ><img src="/icons/PlayButton_purple.svg" alt="" class="mb-1 ms-1" />
+          </router-link>
         </button>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <h4 class="fs-5 text-white mb-2 mb-lg-3">奧本海默</h4>
         <div class="d-flex">
           <span v-for="i in 5" :key="i + 123" class="mx-lg-1">
-            <img src="/icons/star1.png" alt="star-full" class="star1" />
+            <img src="/icons/star_full.svg" alt="star-full" class="star1" />
           </span>
         </div>
         <p class="text-white">第96屆奧斯卡劇情類最佳影片</p>
@@ -59,10 +59,10 @@
           Max同步上映的計劃中產生了分歧，使得諾蘭宣佈不再與華納兄弟進行合作，因此本片成為諾蘭繼《跟蹤》（1998年）和《記憶拼圖》（2000年）後，第三部非.....
         </p>
         <button class="btn-carousel">
-          <a href="" class="btn-index-a"
+          <router-link to="/movies/1" class="btn-index-a"
             >read more <span class="ml-15"></span
-            ><img src="/icons/PlayButton_purple.png" alt="" class="mb-1 ms-1" />
-          </a>
+            ><img src="/icons/PlayButton_purple.svg" alt="" class="mb-1 ms-1" />
+          </router-link>
         </button>
       </div>
     </div>
