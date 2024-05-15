@@ -14,7 +14,6 @@ export default {
   methods: {
     returnTop() {
       $(document).ready(() => {
-        // 捲軸偵測距離頂部超過 50 才顯示按鈕
         $(window).scroll(() => {
           if ($(window).scrollTop() > 50) {
             if ($('.back-top').hasClass('hide')) {
@@ -25,13 +24,12 @@ export default {
           }
         });
 
-        // 點擊按鈕回頂部
         $('.back-top').on('click', (event) => {
           $('html, body').animate(
             {
               scrollTop: 0
             },
-            300 // 回頂部時間為 300 毫秒
+            300
           );
         });
       });

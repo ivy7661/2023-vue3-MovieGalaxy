@@ -54,7 +54,6 @@
               </div>
             </div>
             <div class="col-sm-8">
-              <pre>{{ editMovie }}</pre>
               <div class="mb-3">
                 <label for="name" class="form-label">電影名稱</label>
                 <input

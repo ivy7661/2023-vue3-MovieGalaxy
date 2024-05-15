@@ -57,7 +57,6 @@ export default {
         .then((res) => {
           console.log(res);
           this.users = res.data;
-          console.log(this.users);
         })
         .catch((err) => {
           console.log(err);
