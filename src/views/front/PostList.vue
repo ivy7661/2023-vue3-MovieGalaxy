@@ -78,7 +78,7 @@
                     <button
                       type="button"
                       class="ms-auto d-flex flex-row justify-content-center align-items-center open-detail"
-                      @click="openDetailModal"
+                      @click="openDetailModal(post)"
                     >
                       <div class="text-open">展開影評</div>
                       <i class="bi bi-chevron-down text-white fs-6 ms-3"></i>
