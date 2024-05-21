@@ -1,1 +1,0 @@
-import{s as o,i as t}from"./index-B8jEYp7Z.js";var s={VITE_API_URL:"https://two023-vue3-moviegalaxy.onrender.com",BASE_URL:"./",MODE:"production",DEV:!1,PROD:!0,SSR:!1};const{VITE_API_URL:i}=s,m=o("movieStore",{state:()=>({movies:[]}),actions:{getMovies(){t.get(`${i}/movies`).then(e=>{this.movies=e.data,console.log(this.movies)}).catch(e=>{console.log(e)})}}});export{m};
